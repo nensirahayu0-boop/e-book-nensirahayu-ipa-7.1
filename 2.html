@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2 - Keselamatan Kerja dalam Laboratorium | IPA Kelas 7 Semester 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background: #0056b3;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #003d82;
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .breadcrumb a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: #fff;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .hero h1 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            background: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .chapter-nav a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+            padding: 10px 15px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .chapter-nav a:hover {
+            background: #0056b3;
+            color: #fff;
+        }
+        .content-section {
+            background: #fff;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .content-section h3 {
+            color: #0056b3;
+            margin-top: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .content-section h4 {
+            color: #28a745;
+            margin-top: 20px;
+        }
+        .content-section ul, .content-section ol {
+            margin-left: 20px;
+        }
+        .content-section li {
+            margin-bottom: 10px;
+        }
+        .highlight-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0056b3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .danger-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .exam-tips {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .exam-tips h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        table th {
+            background: #0056b3;
+            color: #fff;
+        }
+        table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .symbol-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .symbol-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #ddd;
+        }
+        .symbol-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .symbol-item strong {
+            color: #dc3545;
+            display: block;
+            margin-bottom: 5px;
+        }
+        footer {
+            background: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: left;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        .footer-grid h4 {
+            border-bottom: 1px solid #555;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bab 2 - Keselamatan Kerja dalam Laboratorium</h1>
+    <p>IPA Kelas 7 Semester 1 | Nensi Rahayu, S.Si</p>
+</header>
+
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="index.html#bab">Daftar Bab</a>
+    <a href="index.html#penulis">Penulis</a>
+</nav>
+
+<div class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">IPA Kelas 7 Semester 1</a> &gt; 
+        <a href="index.html#bab">Daftar Bab</a> &gt; 
+        <strong>Bab 2: Keselamatan Kerja dalam Laboratorium</strong>
+    </div>
+
+    <div class="hero">
+        <h1>BAB 2</h1>
+        <h2 style="color: #0056b3; margin-top: 10px;">Keselamatan Kerja dalam Laboratorium</h2>
+        <p>Memahami pentingnya keselamatan kerja di laboratorium IPA, mengenal alat-alat laboratorium beserta fungsinya, simbol-simbol bahan kimia berbahaya, serta prosedur penanganan kecelakaan kerja.</p>
+        <a href="index.html" class="btn">🏠 Beranda</a>
+        <a href="uji-formatif-2.html" class="btn" style="background: #ffc107; color: #333;">📝 Uji Formatif Bab 2</a>
+        <a href="3.html" class="btn">Bab Selanjutnya →</a>
+    </div>
+
+    <div class="content-section">
+        <h3>A. Pengertian Laboratorium IPA</h3>
+        <p><strong>Laboratorium</strong> (dari bahasa Latin <em>laborare</em> yang berarti bekerja) adalah suatu tempat atau ruangan khusus yang dilengkapi dengan peralatan dan bahan-bahan untuk melakukan percobaan, penyelidikan, atau pengujian ilmiah.</p>
+        
+        <p><strong>Laboratorium IPA</strong> adalah laboratorium yang digunakan untuk melakukan percobaan-percobaan dalam bidang Ilmu Pengetahuan Alam (Biologi, Fisika, dan Kimia). Di laboratorium ini, siswa dapat mengamati, mengukur, dan membuktikan teori-teori IPA secara langsung.</p>
+
+        <div class="highlight-box">
+            <h4>Mengapa Laboratorium Penting?</h4>
+            <ul>
+                <li>Tempat pembuktian teori-teori ilmiah secara nyata</li>
+                <li>Melatih keterampilan praktikum siswa</li>
+                <li>Mengembangkan sikap ilmiah (jujur, teliti, objektif)</li>
+                <li>Menumbuhkan rasa ingin tahu dan kreativitas</li>
+                <li>Tempat belajar bekerja sama dalam tim</li>
+            </ul>
+        </div>
+
+        <h3>B. Fungsi Laboratorium IPA</h3>
+        <p>Laboratorium IPA memiliki beberapa fungsi utama:</p>
+        <ol>
+            <li><strong>Fungsi Pembelajaran:</strong> Tempat siswa melakukan praktikum sesuai materi pelajaran</li>
+            <li><strong>Fungsi Penyelidikan:</strong> Tempat melakukan penelitian dan eksperimen</li>
+            <li><strong>Fungsi Pengembangan:</strong> Tempat mengembangkan kreativitas dan inovasi</li>
+            <li><strong>Fungsi Pembinaan:</strong> Tempat melatih keterampilan menggunakan alat-alat IPA</li>
+        </ol>
+
+        <h3>C. Alat-Alat Laboratorium dan Fungsinya</h3>
+        <p>Sebelum melakukan praktikum, siswa harus mengenal alat-alat laboratorium beserta fungsinya:</p>
+
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Nama Alat</th>
+                <th>Fungsi</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Gelas Ukur</td>
+                <td>Mengukur volume zat cair dengan ketelitian sedang</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pipet Tetes</td>
+                <td>Mengambil cairan dalam jumlah kecil (tetes demi tetes)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Tabung Reaksi</td>
+                <td>Tempat mereaksikan zat dalam jumlah kecil</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Gelas Kimia (Beaker Glass)</td>
+                <td>Tempat mencampur, memanaskan, atau menampung zat cair</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Erlenmeyer</td>
+                <td>Tempat mencampur dan mengaduk larutan, titrasi</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Neraca Ohaus</td>
+                <td>Menimbang massa benda dengan ketelitian tinggi</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Termometer</td>
+                <td>Mengukur suhu zat atau ruangan</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Pembakar Bunsen</td>
+                <td>Sumber panas untuk memanaskan zat</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Mikroskop</td>
+                <td>Mengamati benda-benda yang sangat kecil (sel, bakteri)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Lensa Lup</td>
+                <td>Memperbesar bayangan benda</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Kaki Tiga</td>
+                <td>Penyangga gelas kimia saat pemanasan</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Kawat Kasa</td>
+                <td>Alas gelas kimia saat dipanaskan agar panas merata</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Statif</td>
+                <td>Penyangga alat-alat seperti buret atau klem</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Corong</td>
+                <td>Menuangkan cairan ke wadah bermulut kecil</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Mortar dan Alu</td>
+                <td>Menghaluskan atau menghancurkan bahan padat</td>
+            </tr>
+        </table>
+
+        <h3>D. Bahan Kimia dan Simbol Bahaya</h3>
+        <p>Di laboratorium IPA, terdapat berbagai bahan kimia yang memiliki tingkat bahaya berbeda-beda. Setiap bahan kimia berbahaya harus memiliki <strong>simbol bahaya</strong> pada kemasannya agar pengguna berhati-hati.</p>
+
+        <div class="symbol-grid">
+            <div class="symbol-item">
+                <div class="icon">🔥</div>
+                <strong>FLAMMABLE</strong>
+                Mudah terbakar (contoh: alkohol, bensin)
+            </div>
+            <div class="symbol-item">
+                <div class="icon">☠️</div>
+                <strong>TOXIC</strong>
+                Beracun (contoh: sianida, merkuri)
+            </div>
+            <div class="symbol-item">
+                <div class="icon">⚠️</div>
+                <strong>CORROSIVE</strong>
+                Korosif / merusak (contoh: asam sulfat, HCl)
+            </div>
+            <div class="symbol-item">
+                <div class="icon">💥</div>
+                <strong>EXPLOSIVE</strong>
+                Mudah meledak (contoh: TNT, nitrogliserin)
+            </div>
+            <div class="symbol-item">
+                <div class="icon">☢️</div>
+                <strong>RADIOACTIVE</strong>
+                Radioaktif (contoh: uranium, radium)
+            </div>
+            <div class="symbol-item">
+                <div class="icon">⚕️</div>
+                <strong>IRRITANT</strong>
+                Iritasi (contoh: amonia, klorin)
+            </div>
+            <div class="symbol-item">
+                <div class="icon">🌿</div>
+                <strong>OXIDIZING</strong>
+                Oksidator (contoh: hidrogen peroksida)
+            </div>
+            <div class="symbol-item">
+                <div class="icon">🌍</div>
+                <strong>ENVIRONMENTAL HAZARD</strong>
+                Berbahaya bagi lingkungan
+            </div>
+        </div>
+
+        <h3>E. Aturan Keselamatan Kerja di Laboratorium</h3>
+        <p>Untuk menjamin keselamatan kerja, setiap orang yang masuk laboratorium harus mematuhi aturan berikut:</p>
+
+        <div class="warning-box">
+            <h4>⚠️ Aturan Umum Keselamatan Kerja:</h4>
+            <ol>
+                <li>Menggunakan <strong>jasa lab (lab coat)</strong>, kacamata pelindung, dan sarung tangan saat praktikum</li>
+                <li>Tidak makan, minum, atau bermain di dalam laboratorium</li>
+                <li>Tidak berlari atau bercanda di laboratorium</li>
+                <li>Membaca label pada setiap botol bahan kimia sebelum digunakan</li>
+                <li>Tidak mencium bahan kimia secara langsung (gunakan tangan untuk mengibaskan bau)</li>
+                <li>Tidak mencicipi bahan kimia apapun</li>
+                <li>Menggunakan alat sesuai fungsinya</li>
+                <li>Membersihkan meja kerja setelah selesai praktikum</li>
+                <li>Mencuci tangan dengan sabun setelah praktikum</li>
+                <li>Mengetahui lokasi alat pemadam api, kotak P3K, dan pintu darurat</li>
+            </ol>
+        </div>
+
+        <h3>F. Alat Pelindung Diri (APD) di Laboratorium</h3>
+        <p>Alat Pelindung Diri (APD) adalah peralatan yang wajib digunakan untuk melindungi tubuh dari bahaya di laboratorium:</p>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Nama APD</th>
+                <th>Fungsi</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Jas Laboratorium (Lab Coat)</td>
+                <td>Melindungi pakaian dan kulit dari percikan bahan kimia</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Kacamata Pelindung (Goggles)</td>
+                <td>Melindungi mata dari percikan bahan kimia atau pecahan kaca</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Sarung Tangan</td>
+                <td>Melindungi tangan dari bahan kimia berbahaya dan panas</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Masker</td>
+                <td>Melindungi pernapasan dari uap atau debu bahan kimia</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Sepatu Tertutup</td>
+                <td>Melindungi kaki dari tumpahan bahan kimia atau benda tajam</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Celemek</td>
+                <td>Melindungi pakaian dari kotoran dan percikan</td>
+            </tr>
+        </table>
+
+        <h3>G. Prosedur Penanganan Kecelakaan di Laboratorium</h3>
+        <p>Meskipun telah berhati-hati, kecelakaan di laboratorium bisa saja terjadi. Berikut prosedur penanganannya:</p>
+
+        <div class="danger-box">
+            <h4>🚨 Prosedur Penanganan Kecelakaan:</h4>
+            <ol>
+                <li><strong>Tetap Tenang:</strong> Jangan panik, tarik napas dalam-dalam</li>
+                <li><strong>Hubungi Guru/Pengawas:</strong> Segera laporkan kepada guru yang bertugas</li>
+                <li><strong>Gunakan Kotak P3K:</strong> Berikan pertolongan pertama sesuai jenis kecelakaan</li>
+                <li><strong>Evakuasi jika Perlu:</strong> Jika terjadi kebakaran besar atau kebocoran gas, segera evakuasi</li>
+                <li><strong>Gunakan Alat Pemadam:</strong> Gunakan APAR (Alat Pemadam Api Ringan) jika terjadi kebakaran kecil</li>
+                <li><strong>Catat Kejadian:</strong> Buat laporan kecelakaan untuk evaluasi</li>
+            </ol>
+        </div>
+
+        <h4>Penanganan Khusus Kecelakaan:</h4>
+        <ul>
+            <li><strong>Tumpahan Asam/Basa di Kulit:</strong> Bilas dengan air mengalir minimal 15 menit</li>
+            <li><strong>Bahan Kimia Masuk Mata:</strong> Bilas dengan air mengalir di eyewash selama 15 menit, segera ke dokter</li>
+            <li><strong>Luka Bakar:</strong> Bilas dengan air dingin, jangan diolesi pasta gigi atau mentega</li>
+            <li><strong>Luka Iris:</strong> Tekan luka dengan kain bersih, beri antiseptik, plester</li>
+            <li><strong>Menghirup Uap Beracun:</strong> Bawa korban ke tempat terbuka yang berudara segar</li>
+            <li><strong>Kebakaran Kecil:</strong> Gunakan APAR atau selimut api (fire blanket)</li>
+        </ul>
+
+        <h3>H. Limbah Laboratorium dan Penanganannya</h3>
+        <p>Sisa bahan kimia dari praktikum disebut <strong>limbah laboratorium</strong>. Limbah ini tidak boleh dibuang sembarangan karena dapat mencemari lingkungan.</p>
+
+        <h4>Jenis Limbah Laboratorium:</h4>
+        <ol>
+            <li><strong>Limbah Padat:</strong> Kertas saring, sisa bahan padat, pecahan kaca</li>
+            <li><strong>Limbah Cair:</strong> Sisa larutan asam, basa, atau bahan kimia lainnya</li>
+            <li><strong>Limbah B3 (Bahan Berbahaya dan Beracun):</strong> Limbah yang mengandung bahan beracun, korosif, mudah terbakar</li>
+        </ol>
+
+        <div class="highlight-box">
+            <h4>Prinsip Penanganan Limbah (3R):</h4>
+            <ul>
+                <li><strong>Reduce (Kurangi):</strong> Gunakan bahan kimia secukupnya</li>
+                <li><strong>Reuse (Gunakan Kembali):</strong> Gunakan kembali bahan yang masih bisa dipakai</li>
+                <li><strong>Recycle (Daur Ulang):</strong> Olah limbah menjadi bahan yang berguna</li>
+            </ul>
+        </div>
+
+        <h4>Cara Membuang Limbah dengan Benar:</h4>
+        <ul>
+            <li>Limbah cair netral (seperti air cucian) boleh dibuang ke saluran air setelah dinetralkan</li>
+            <li>Limbah asam dan basa harus dinetralkan terlebih dahulu sebelum dibuang</li>
+            <li>Limbah B3 harus dikumpulkan dalam wadah khusus dan diserahkan ke pihak berwenang</li>
+            <li>Pecahan kaca dibuang di wadah khusus (bukan tempat sampah biasa)</li>
+            <li>Tidak boleh membuang limbah ke wastafel tanpa izin guru</li>
+        </ul>
+
+        <h3>I. Tata Tertib Masuk Laboratorium</h3>
+        <p>Setiap siswa yang akan masuk laboratorium harus mematuhi tata tertib berikut:</p>
+        <ol>
+            <li>Membaca dan memahami tata tertib laboratorium</li>
+            <li>Menggunakan APD lengkap sebelum masuk</li>
+            <li>Membawa buku panduan praktikum</li>
+            <li>Mendengarkan penjelasan guru sebelum praktikum dimulai</li>
+            <li>Tidak menyentuh alat dan bahan sebelum ada instruksi</li>
+            <li>Bekerja dengan tertib dan serius</li>
+            <li>Melaporkan setiap kerusakan alat atau kecelakaan</li>
+            <li>Membersihkan dan merapikan alat setelah praktikum</li>
+            <li>Mencuci tangan sebelum keluar dari laboratorium</li>
+        </ol>
+
+        <div class="exam-tips">
+            <h4>📌 Poin Penting untuk Ujian:</h4>
+            <ul>
+                <li>Pahami pengertian dan fungsi laboratorium IPA</li>
+                <li>Hafalkan minimal 10 alat laboratorium beserta fungsinya</li>
+                <li>Kuasai simbol-simbol bahaya pada bahan kimia</li>
+                <li>Sebutkan minimal 5 aturan keselamatan kerja di laboratorium</li>
+                <li>Pahami jenis-jenis APD dan fungsinya</li>
+                <li>Kuasai prosedur penanganan kecelakaan di laboratorium</li>
+                <li>Pahami prinsip 3R dalam penanganan limbah</li>
+                <li>Mampu menjelaskan cara membuang limbah dengan benar</li>
+            </ul>
+        </div>
+
+        <h3>J. Rangkuman Bab 2</h3>
+        <ul>
+            <li>Laboratorium adalah tempat melakukan percobaan ilmiah</li>
+            <li>Alat-alat laboratorium memiliki fungsi spesifik yang harus dipahami</li>
+            <li>Bahan kimia berbahaya ditandai dengan simbol bahaya tertentu</li>
+            <li>Keselamatan kerja di laboratorium adalah prioritas utama</li>
+            <li>APD wajib digunakan saat praktikum</li>
+            <li>Kecelakaan di laboratorium harus ditangani dengan prosedur yang benar</li>
+            <li>Limbah laboratorium harus dibuang sesuai aturan untuk menjaga lingkungan</li>
+        </ul>
+    </div>
+
+    <div class="chapter-nav">
+        <a href="index.html">🏠 Kembali ke Beranda</a>
+        <a href="uji-formatif-2.html">✍️ Uji Formatif Bab 2</a>
+        <a href="3.html">Bab Selanjutnya →</a>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>IPA Kelas 7 Semester 1</h4>
+            <p>Buku ajar Ilmu Pengetahuan Alam untuk siswa MTs Kelas VII.</p>
+        </div>
+        <div>
+            <h4>Navigasi</h4>
+            <p><a href="index.html">Beranda</a></p>
+            <p><a href="index.html#tentang">Tentang Buku</a></p>
+            <p><a href="index.html#bab">Daftar Bab</a></p>
+            <p><a href="index.html#penulis">Penulis</a></p>
+        </div>
+        <div>
+            <h4>Kontak</h4>
+            <p>📧 <a href="mailto:nensirahayu0@gmail.com">nensirahayu0@gmail.com</a></p>
+            <p>🏫 MTsN 6 Agam</p>
+        </div>
+    </div>
+    <p style="margin-top: 30px; border-top: 1px solid #555; padding-top: 20px;">&copy; 2026 Nensi Rahayu, S.Si - MTsN 6 Agam. Hak cipta dilindungi.</p>
+</footer>
+
+</body>
+</html>

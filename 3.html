@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 3 - Pengukuran dalam Kegiatan Pengamatan IPA | IPA Kelas 7 Semester 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background: #0056b3;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #003d82;
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .breadcrumb a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: #fff;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .hero h1 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            background: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .chapter-nav a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+            padding: 10px 15px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .chapter-nav a:hover {
+            background: #0056b3;
+            color: #fff;
+        }
+        .content-section {
+            background: #fff;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .content-section h3 {
+            color: #0056b3;
+            margin-top: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .content-section h4 {
+            color: #28a745;
+            margin-top: 20px;
+        }
+        .content-section ul, .content-section ol {
+            margin-left: 20px;
+        }
+        .content-section li {
+            margin-bottom: 10px;
+        }
+        .highlight-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0056b3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .exam-tips {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .exam-tips h4 {
+            color: #856404;
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        table th {
+            background: #0056b3;
+            color: #fff;
+        }
+        table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .formula-box {
+            background: #f8f9fa;
+            border: 2px dashed #0056b3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .example-box {
+            background: #e7f3ff;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .example-box strong {
+            color: #28a745;
+        }
+        footer {
+            background: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: left;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        .footer-grid h4 {
+            border-bottom: 1px solid #555;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bab 3 - Pengukuran dalam Kegiatan Pengamatan IPA</h1>
+    <p>IPA Kelas 7 Semester 1 | Nensi Rahayu, S.Si</p>
+</header>
+
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="index.html#bab">Daftar Bab</a>
+    <a href="index.html#penulis">Penulis</a>
+</nav>
+
+<div class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">IPA Kelas 7 Semester 1</a> &gt; 
+        <a href="index.html#bab">Daftar Bab</a> &gt; 
+        <strong>Bab 3: Pengukuran dalam Kegiatan Pengamatan IPA</strong>
+    </div>
+
+    <div class="hero">
+        <h1>BAB 3</h1>
+        <h2 style="color: #0056b3; margin-top: 10px;">Pengukuran dalam Kegiatan Pengamatan IPA</h2>
+        <p>Memahami konsep pengukuran, besaran pokok dan besaran turunan, satuan standar (SI), alat-alat ukur, serta cara melakukan pengukuran yang benar dalam kegiatan pengamatan IPA.</p>
+        <a href="index.html" class="btn">🏠 Beranda</a>
+        <a href="uji-formatif-3.html" class="btn" style="background: #ffc107; color: #333;">📝 Uji Formatif Bab 3</a>
+        <a href="4.html" class="btn">Bab Selanjutnya →</a>
+    </div>
+
+    <div class="content-section">
+        <h3>A. Pengertian Pengukuran</h3>
+        <p><strong>Pengukuran</strong> adalah kegiatan membandingkan suatu besaran yang diukur dengan alat ukur yang digunakan sebagai satuan. Hasil dari pengukuran berupa angka atau nilai yang menunjukkan seberapa besar besaran yang diukur.</p>
+        
+        <div class="highlight-box">
+            <h4>Contoh Pengukuran dalam Kehidupan Sehari-hari:</h4>
+            <ul>
+                <li>Mengukur panjang meja dengan penggaris</li>
+                <li>Menimbang massa buah di pasar dengan timbangan</li>
+                <li>Mengukur waktu tempuh perjalanan dengan jam</li>
+                <li>Mengukur suhu tubuh dengan termometer</li>
+                <li>Mengukur volume air dengan gelas ukur</li>
+            </ul>
+        </div>
+
+        <h4>Komponen dalam Pengukuran</h4>
+        <p>Setiap pengukuran terdiri dari tiga komponen utama:</p>
+        <ol>
+            <li><strong>Besaran:</strong> Sesuatu yang dapat diukur dan dinyatakan dengan angka (contoh: panjang, massa, waktu)</li>
+            <li><strong>Nilai/Numerik:</strong> Angka hasil pengukuran (contoh: 5, 10, 25)</li>
+            <li><strong>Satuan:</strong> Pembanding dalam pengukuran (contoh: meter, kilogram, sekon)</li>
+        </ol>
+
+        <div class="example-box">
+            <strong>Contoh:</strong> Panjang meja = 1,5 meter
+            <ul>
+                <li><strong>Besaran:</strong> Panjang</li>
+                <li><strong>Nilai:</strong> 1,5</li>
+                <li><strong>Satuan:</strong> meter</li>
+            </ul>
+        </div>
+
+        <h3>B. Besaran dalam IPA</h3>
+        <p><strong>Besaran</strong> adalah segala sesuatu yang dapat diukur dan dinyatakan dengan angka atau nilai tertentu serta memiliki satuan.</p>
+
+        <h4>1. Besaran Pokok</h4>
+        <p><strong>Besaran pokok</strong> adalah besaran yang satuannya telah ditetapkan terlebih dahulu dan tidak diturunkan dari besaran lain. Dalam Sistem Internasional (SI), terdapat <strong>7 besaran pokok</strong>:</p>
+
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Besaran Pokok</th>
+                <th>Satuan SI</th>
+                <th>Simbol Satuan</th>
+                <th>Alat Ukur</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Panjang</td>
+                <td>Meter</td>
+                <td>m</td>
+                <td>Penggaris, mistar, jangka sorong, mikrometer sekrup</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Massa</td>
+                <td>Kilogram</td>
+                <td>kg</td>
+                <td>Neraca, timbangan</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Waktu</td>
+                <td>Sekon (detik)</td>
+                <td>s</td>
+                <td>Jam, stopwatch</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Suhu</td>
+                <td>Kelvin</td>
+                <td>K</td>
+                <td>Termometer</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Kuat Arus Listrik</td>
+                <td>Ampere</td>
+                <td>A</td>
+                <td>Amperemeter</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Intensitas Cahaya</td>
+                <td>Kandela</td>
+                <td>cd</td>
+                <td>Luxmeter</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Jumlah Zat</td>
+                <td>Mol</td>
+                <td>mol</td>
+                <td>-</td>
+            </tr>
+        </table>
+
+        <div class="warning-box">
+            <h4>💡 Tips Menghafal Besaran Pokok:</h4>
+            <p>Gunakan jembatan keledai: <strong>"Jiwa Kuadrat Panjang Masa Suhu Inten"</strong></p>
+            <ul>
+                <li><strong>Ji</strong>wa = Jumlah zat (mol)</li>
+                <li><strong>Kua</strong> = Kuat arus (Ampere)</li>
+                <li><strong>Panjang</strong> = Panjang (meter)</li>
+                <li><strong>Masa</strong> = Massa (kilogram)</li>
+                <li><strong>Suhu</strong> = Suhu (Kelvin)</li>
+                <li><strong>Inten</strong> = Intensitas cahaya (kandela)</li>
+                <li>+ Waktu (sekon)</li>
+            </ul>
+        </div>
+
+        <h4>2. Besaran Turunan</h4>
+        <p><strong>Besaran turunan</strong> adalah besaran yang diturunkan dari satu atau lebih besaran pokok. Satuan besaran turunan diperoleh dari kombinasi satuan besaran pokok.</p>
+
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Besaran Turunan</th>
+                <th>Satuan SI</th>
+                <th>Rumus dari Besaran Pokok</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Luas</td>
+                <td>m²</td>
+                <td>panjang × lebar</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Volume</td>
+                <td>m³</td>
+                <td>panjang × lebar × tinggi</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Kecepatan</td>
+                <td>m/s</td>
+                <td>panjang / waktu</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Percepatan</td>
+                <td>m/s²</td>
+                <td>kecepatan / waktu</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Gaya</td>
+                <td>Newton (N)</td>
+                <td>massa × percepatan (kg·m/s²)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Usaha/Energi</td>
+                <td>Joule (J)</td>
+                <td>gaya × perpindahan (kg·m²/s²)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Tekanan</td>
+                <td>Pascal (Pa)</td>
+                <td>gaya / luas (kg/m·s²)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Massa Jenis</td>
+                <td>kg/m³</td>
+                <td>massa / volume</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Frekuensi</td>
+                <td>Hertz (Hz)</td>
+                <td>1 / waktu</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Daya</td>
+                <td>Watt (W)</td>
+                <td>usaha / waktu (kg·m²/s³)</td>
+            </tr>
+        </table>
+
+        <h3>C. Satuan dan Sistem Satuan</h3>
+        <p><strong>Satuan</strong> adalah pembanding dalam suatu kegiatan pengukuran. Setiap besaran memiliki satuan yang berbeda-beda.</p>
+
+        <h4>1. Satuan Baku dan Tidak Baku</h4>
+        <ul>
+            <li><strong>Satuan Baku:</strong> Satuan yang hasilnya tetap dan diakui secara internasional (contoh: meter, kilogram, sekon)</li>
+            <li><strong>Satuan Tidak Baku:</strong> Satuan yang hasilnya dapat berbeda-beda tergantung orang yang mengukur (contoh: depa, hasta, jengkal, langkah)</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h4>Syarat Satuan Baku:</h4>
+            <ol>
+                <li>Tetap (tidak berubah karena pengaruh apapun)</li>
+                <li>Mudah ditiru (dapat dibuat ulang dengan hasil yang sama)</li>
+                <li>Berlaku secara internasional (diakui di seluruh dunia)</li>
+            </ol>
+        </div>
+
+        <h4>2. Sistem Satuan Internasional (SI)</h4>
+        <p><strong>Sistem Internasional (SI)</strong> adalah sistem satuan yang digunakan secara internasional. Ada dua sistem satuan utama:</p>
+        <ul>
+            <li><strong>Sistem MKS (Meter-Kilogram-Second):</strong> Menggunakan meter, kilogram, dan sekon</li>
+            <li><strong>Sistem CGS (Centimeter-Gram-Second):</strong> Menggunakan centimeter, gram, dan sekon</li>
+        </ul>
+
+        <h4>3. Konversi Satuan</h4>
+        <p>Konversi satuan adalah mengubah suatu satuan ke satuan lain yang setara. Berikut tangga konversi satuan panjang dan massa:</p>
+
+        <div class="formula-box">
+            <strong>Tangga Konversi Panjang:</strong><br>
+            km → hm → dam → <strong>m</strong> → dm → cm → mm<br>
+            <em>Turun 1 tangga × 10 | Naik 1 tangga ÷ 10</em>
+        </div>
+
+        <div class="formula-box">
+            <strong>Tangga Konversi Massa:</strong><br>
+            ton → kwintal → kg → hg → dag → <strong>g</strong> → dg → cg → mg<br>
+            <em>Turun 1 tangga × 10 | Naik 1 tangga ÷ 10</em>
+        </div>
+
+        <div class="example-box">
+            <strong>Contoh Konversi:</strong>
+            <ul>
+                <li>2 km = 2 × 1000 m = <strong>2000 m</strong></li>
+                <li>500 cm = 500 ÷ 100 m = <strong>5 m</strong></li>
+                <li>3 kg = 3 × 1000 g = <strong>3000 g</strong></li>
+                <li>2500 mg = 2500 ÷ 1000 g = <strong>2,5 g</strong></li>
+                <li>1 jam = 60 menit = 3600 sekon</li>
+            </ul>
+        </div>
+
+        <h3>D. Alat-Alat Ukur</h3>
+        <p>Setiap besaran memiliki alat ukur yang berbeda-beda sesuai dengan tingkat ketelitian yang dibutuhkan.</p>
+
+        <h4>1. Alat Ukur Panjang</h4>
+        <table>
+            <tr>
+                <th>Nama Alat</th>
+                <th>Ketelitian</th>
+                <th>Kegunaan</th>
+            </tr>
+            <tr>
+                <td>Penggaris/Mistar</td>
+                <td>1 mm (0,1 cm)</td>
+                <td>Mengukur panjang benda sehari-hari</td>
+            </tr>
+            <tr>
+                <td>Rol Meter (Meteran)</td>
+                <td>1 mm</td>
+                <td>Mengukur panjang yang lebih besar (kain, tanah)</td>
+            </tr>
+            <tr>
+                <td>Jangka Sorong</td>
+                <td>0,1 mm (0,01 cm)</td>
+                <td>Mengukur diameter luar, diameter dalam, dan kedalaman</td>
+            </tr>
+            <tr>
+                <td>Mikrometer Sekrup</td>
+                <td>0,01 mm</td>
+                <td>Mengukur ketebalan benda yang sangat tipis (kertas, kawat)</td>
+            </tr>
+        </table>
+
+        <h4>2. Alat Ukur Massa</h4>
+        <table>
+            <tr>
+                <th>Nama Alat</th>
+                <th>Kegunaan</th>
+            </tr>
+            <tr>
+                <td>Neraca Ohaus</td>
+                <td>Menimbang massa benda di laboratorium (ketelitian tinggi)</td>
+            </tr>
+            <tr>
+                <td>Neraca Pasar/Timbangan</td>
+                <td>Menimbang barang di pasar atau toko</td>
+            </tr>
+            <tr>
+                <td>Neraca Lengan Gantung</td>
+                <td>Menimbang barang dengan menggantung</td>
+            </tr>
+            <tr>
+                <td>Neraca Digital</td>
+                <td>Menimbang dengan ketelitian sangat tinggi</td>
+            </tr>
+        </table>
+
+        <h4>3. Alat Ukur Waktu</h4>
+        <table>
+            <tr>
+                <th>Nama Alat</th>
+                <th>Ketelitian</th>
+                <th>Kegunaan</th>
+            </tr>
+            <tr>
+                <td>Jam Tangan</td>
+                <td>1 detik</td>
+                <td>Menunjukkan waktu dalam kehidupan sehari-hari</td>
+            </tr>
+            <tr>
+                <td>Stopwatch</td>
+                <td>0,01 detik</td>
+                <td>Mengukur selang waktu pada percobaan/olahraga</td>
+            </tr>
+            <tr>
+                <td>Jam Atom</td>
+                <td>Sangat tinggi</td>
+                <td>Standar waktu internasional</td>
+            </tr>
+        </table>
+
+        <h3>E. Cara Melakukan Pengukuran yang Benar</h3>
+        <p>Untuk mendapatkan hasil pengukuran yang akurat, perhatikan langkah-langkah berikut:</p>
+
+        <div class="success-box">
+            <h4>Langkah-Langkah Pengukuran yang Benar:</h4>
+            <ol>
+                <li><strong>Pilih alat ukur yang sesuai:</strong> Sesuaikan alat ukur dengan besaran yang akan diukur</li>
+                <li><strong>Periksa kondisi alat:</strong> Pastikan alat dalam keadaan baik dan sudah dikalibrasi</li>
+                <li><strong>Posisikan alat dengan benar:</strong> Letakkan alat ukur sesuai dengan cara penggunaannya</li>
+                <li><strong>Baca skala dengan tepat:</strong> Posisi mata harus tegak lurus dengan skala (hindari kesalahan paralaks)</li>
+                <li><strong>Catat hasil pengukuran:</strong> Tuliskan nilai dan satuannya dengan lengkap</li>
+                <li><strong>Lakukan pengulangan:</strong> Untuk meningkatkan ketelitian, lakukan pengukuran beberapa kali</li>
+            </ol>
+        </div>
+
+        <h4>Kesalahan Paralaks</h4>
+        <p><strong>Kesalahan paralaks</strong> adalah kesalahan pembacaan alat ukur akibat posisi mata pengamat yang tidak tegak lurus dengan skala. Untuk menghindari kesalahan ini, posisi mata harus tegak lurus dengan skala alat ukur.</p>
+
+        <h3>F. Ketidakpastian Pengukuran</h3>
+        <p>Tidak ada pengukuran yang 100% tepat. Setiap pengukuran selalu memiliki <strong>ketidakpastian</strong> (rasa ragu) yang disebabkan oleh beberapa faktor:</p>
+        <ol>
+            <li>Keterbatasan ketelitian alat ukur</li>
+            <li>Keterampilan pengamat dalam membaca skala</li>
+            <li>Kondisi lingkungan (suhu, kelembapan)</li>
+            <li>Kondisi alat ukur (aus, rusak)</li>
+        </ol>
+
+        <div class="highlight-box">
+            <h4>Penulisan Hasil Pengukuran:</h4>
+            <p>Hasil pengukuran ditulis dengan format:</p>
+            <div class="formula-box">
+                x = x₀ ± Δx<br>
+                <em>di mana:</em><br>
+                x = hasil pengukuran<br>
+                x₀ = nilai yang diukur<br>
+                Δx = ketidakpastian (setengah skala terkecil)
+            </div>
+            <p><strong>Contoh:</strong> Panjang pensil = (15,0 ± 0,05) cm</p>
+        </div>
+
+        <h3>G. Penerapan Pengukuran dalam Kehidupan Sehari-hari</h3>
+        <p>Pengukuran memiliki peran penting dalam berbagai aspek kehidupan:</p>
+        <ul>
+            <li><strong>Perdagangan:</strong> Menimbang berat barang, mengukur panjang kain</li>
+            <li><strong>Kesehatan:</strong> Mengukur suhu tubuh, tekanan darah, dosis obat</li>
+            <li><strong>Industri:</strong> Mengukur dimensi produk, kualitas bahan</li>
+            <li><strong>Olahraga:</strong> Mengukur jarak lari, waktu tempuh</li>
+            <li><strong>Pembangunan:</strong> Mengukur luas tanah, tinggi bangunan</li>
+            <li><strong>Penelitian IPA:</strong> Mengumpulkan data eksperimen yang akurat</li>
+        </ul>
+
+        <div class="exam-tips">
+            <h4>📌 Poin Penting untuk Ujian:</h4>
+            <ul>
+                <li>Pahami pengertian pengukuran, besaran, nilai, dan satuan</li>
+                <li>Hafalkan 7 besaran pokok beserta satuan SI-nya</li>
+                <li>Pahami perbedaan besaran pokok dan besaran turunan</li>
+                <li>Kuasai konversi satuan panjang, massa, dan waktu</li>
+                <li>Sebutkan minimal 3 alat ukur untuk panjang, massa, dan waktu</li>
+                <li>Pahami syarat satuan baku</li>
+                <li>Ketahui cara membaca alat ukur dengan benar (hindari paralaks)</li>
+                <li>Pahami konsep ketidakpastian pengukuran</li>
+            </ul>
+        </div>
+
+        <h3>H. Rangkuman Bab 3</h3>
+        <ul>
+            <li>Pengukuran adalah kegiatan membandingkan besaran dengan alat ukur sebagai satuan</li>
+            <li>Besaran dibagi menjadi besaran pokok (7 macam) dan besaran turunan</li>
+            <li>Satuan baku harus tetap, mudah ditiru, dan berlaku internasional</li>
+            <li>Sistem Internasional (SI) terdiri dari sistem MKS dan CGS</li>
+            <li>Alat ukur panjang: penggaris, jangka sorong, mikrometer sekrup</li>
+            <li>Alat ukur massa: neraca Ohaus, timbangan</li>
+            <li>Alat ukur waktu: stopwatch, jam</li>
+            <li>Pengukuran yang benar harus menghindari kesalahan paralaks</li>
+            <li>Setiap pengukuran memiliki ketidakpastian</li>
+        </ul>
+    </div>
+
+    <div class="chapter-nav">
+        <a href="index.html">🏠 Kembali ke Beranda</a>
+        <a href="uji-formatif-3.html">✍️ Uji Formatif Bab 3</a>
+        <a href="4.html">Bab Selanjutnya →</a>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>IPA Kelas 7 Semester 1</h4>
+            <p>Buku ajar Ilmu Pengetahuan Alam untuk siswa MTs Kelas VII.</p>
+        </div>
+        <div>
+            <h4>Navigasi</h4>
+            <p><a href="index.html">Beranda</a></p>
+            <p><a href="index.html#tentang">Tentang Buku</a></p>
+            <p><a href="index.html#bab">Daftar Bab</a></p>
+            <p><a href="index.html#penulis">Penulis</a></p>
+        </div>
+        <div>
+            <h4>Kontak</h4>
+            <p>📧 <a href="mailto:nensirahayu0@gmail.com">nensirahayu0@gmail.com</a></p>
+            <p>🏫 MTsN 6 Agam</p>
+        </div>
+    </div>
+    <p style="margin-top: 30px; border-top: 1px solid #555; padding-top: 20px;">&copy; 2026 Nensi Rahayu, S.Si - MTsN 6 Agam. Hak cipta dilindungi.</p>
+</footer>
+
+</body>
+</html>

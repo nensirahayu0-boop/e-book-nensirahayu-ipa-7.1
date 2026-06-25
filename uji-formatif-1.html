@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Formatif Bab 1 - Hakikat Sains dan Metode Ilmiah | IPA Kelas 7</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background: #0056b3;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #003d82;
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .breadcrumb a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fff;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .hero h1 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .section {
+            background: #fff;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0056b3;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+        .question-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #0056b3;
+        }
+        .question-box h4 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .options label:hover {
+            background: #e9ecef;
+            border-color: #0056b3;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+        .btn {
+            display: inline-block;
+            background: #28a745;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-right: 10px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+        .btn-warning {
+            background: #ffc107;
+            color: #333;
+        }
+        .btn-warning:hover {
+            background: #e0a800;
+        }
+        .btn-danger {
+            background: #dc3545;
+        }
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        .btn-info {
+            background: #17a2b8;
+        }
+        .btn-info:hover {
+            background: #138496;
+        }
+        .result-box {
+            background: #d4edda;
+            border: 2px solid #c3e6cb;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+            display: none;
+            text-align: center;
+        }
+        .result-box h3 {
+            color: #155724;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .score-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .score-item span {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .score-item label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .essay-input {
+            width: 80px !important;
+            display: inline-block !important;
+            text-align: center;
+            margin-left: 10px;
+        }
+        footer {
+            background: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: left;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        .footer-grid h4 {
+            border-bottom: 1px solid #555;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .chapter-nav a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+            padding: 10px 15px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .chapter-nav a:hover {
+            background: #0056b3;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📋 Uji Formatif Bab 1</h1>
+    <p>Hakikat Sains dan Metode Ilmiah</p>
+</header>
+
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="index.html#bab">Daftar Bab</a>
+    <a href="1.html">Materi Bab 1</a>
+</nav>
+
+<div class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">IPA Kelas 7 Semester 1</a> &gt; 
+        <a href="index.html#bab">Daftar Bab</a> &gt; 
+        <a href="1.html">Materi Bab 1</a> &gt; 
+        <strong>Uji Formatif</strong>
+    </div>
+
+    <div class="hero">
+        <h1>📋 Uji Formatif Bab 1</h1>
+        <h2 style="color: #0056b3; margin-top: 10px;">Hakikat Sains dan Metode Ilmiah</h2>
+        <div class="info-box" style="text-align: left; max-width: 800px; margin: 20px auto;">
+            <p><strong>📋 Bagian A:</strong> Pilihan Ganda (10 soal, skor 10/soal) | <strong>✍️ Bagian B:</strong> Essay (5 soal, skor 20/soal)</p>
+            <p><strong>Materi:</strong> Pengertian sains dan IPA, cabang-cabang IPA, metode ilmiah, langkah-langkah metode ilmiah, variabel eksperimen, dan sikap ilmiah.</p>
+            <p><strong>Waktu:</strong> Tidak terbatas | <strong>Total Skor:</strong> 200 poin</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📋 Data Siswa</h2>
+        <form id="formSiswa">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap <span style="color:red;">*</span></label>
+                    <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                </div>
+                <div class="form-group">
+                    <label for="nis">NIS <span style="color:red;">*</span></label>
+                    <input type="text" id="nis" required placeholder="Nomor Induk Siswa">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="tanggal">📅 Tanggal Ujian</label>
+                    <input type="date" id="tanggal">
+                </div>
+                <div class="form-group">
+                    <label for="kelas">Kelas <span style="color:red;">*</span></label>
+                    <select id="kelas" required>
+                        <option value="">Pilih Kelas</option>
+                        <option value="VII A">VII A</option>
+                        <option value="VII B">VII B</option>
+                        <option value="VII C">VII C</option>
+                        <option value="VII D">VII D</option>
+                        <option value="VII E">VII E</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="section">
+        <h2>📋 Bagian A – Pilihan Ganda</h2>
+        <p style="color: #dc3545; font-weight: bold;">⚠️ Lengkapi semua 10 soal pilihan ganda! Setiap soal bernilai 10 poin.</p>
+        
+        <div class="question-box">
+            <h4>Soal 1</h4>
+            <p>Cabang Ilmu Pengetahuan Alam (IPA) yang mempelajari tentang makhluk hidup dan interaksinya dengan lingkungan disebut...</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> a) Fisika</label>
+                <label><input type="radio" name="q1" value="b"> b) Biologi</label>
+                <label><input type="radio" name="q1" value="c"> c) Kimia</label>
+                <label><input type="radio" name="q1" value="d"> d) Astronomi</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal 2</h4>
+            <p>IPA memiliki tiga dimensi utama. Kumpulan pengetahuan berupa fakta, konsep, prinsip, dan hukum dalam IPA merupakan dimensi IPA sebagai...</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> a) Produk</label>
+                <label><input type="radio" name="q2" value="b"> b) Proses</label>
+                <label><input type="radio" name="q2" value="c"> c) Sikap</label>
+                <label><input type="radio" name="q2" value="d"> d) Metode</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal 3</h4>
+            <p>Langkah pertama yang harus dilakukan dalam metode ilmiah sebelum merumuskan masalah adalah...</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> a) Menyusun hipotesis</label>
+                <label><input type="radio" name="q3" value="b"> b) Melakukan eksperimen</label>
+                <label><input type="radio" name="q3" value="c"> c) Observasi (pengamatan)</label>
+                <label><input type="radio" name="q3" value="d"> d) Menarik kesimpulan</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal 4</h4>
+            <p>Jawaban sementara terhadap rumusan masalah yang masih harus diuji kebenarannya melalui eksperimen disebut...</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> a) Variabel</label>
+                <label><input type="radio" name="q4" value="b"> b) Hipotesis</label>
+                <label><input type="radio" name="q4" value="c"> c) Observasi</label>
+                <label><input type="radio" name="q4" value="d"> d) Kesimpulan</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal 5</h4>
+            <p>Dalam sebuah eksperimen untuk mengetahui pengaruh pupuk terhadap pertumbuhan tanaman tomat, faktor yang diubah-ubah oleh peneliti disebut...</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> a) Variabel terikat</label>
+                <label><input type="radio" name="q5" value="b"> b) Variabel kontrol</label>
+                <label><input type="radio" name="q5" value="c"> c) Variabel bebas</label>
+                <label><input type="radio" name="q5" value="d"> d) Variabel pengganggu</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal 6</h4>
+            <p>Faktor yang dijaga tetap agar tidak memengaruhi hasil eksperimen disebut...</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> a) Variabel bebas</label>
+                <label><input type="radio" name="q6" value="b"> b) Variabel terikat</label>
+                <label><input type="radio" name="q6" value="c"> c) Variabel kontrol</label>
+                <label><input type="radio" name="q6" value="d"> d) Variabel respon</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal 7</h4>
+            <p>Seorang siswa melaporkan data hasil pengamatannya apa adanya tanpa memanipulasi hasil. Sikap ilmiah yang ditunjukkan siswa tersebut adalah...</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> a) Objektif</label>
+                <label><input type="radio" name="q7" value="b"> b) Jujur</label>
+                <label><input type="radio" name="q7" value="c"> c) Skeptis</label>
+                <label><input type="radio" name="q7" value="d"> d) Kreatif</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal 8</h4>
+            <p>Sikap tidak mudah percaya pada suatu pernyataan tanpa adanya bukti atau data yang mendukung disebut sikap...</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> a) Tekun</label>
+                <label><input type="radio" name="q8" value="b"> b) Terbuka</label>
+                <label><input type="radio" name="q8" value="c"> c) Skeptis</label>
+                <label><input type="radio" name="q8" value="d"> d) Jujur</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal 9</h4>
+            <p>Perhatikan pernyataan berikut! <em>"Semakin tinggi intensitas cahaya matahari, semakin cepat pertumbuhan tanaman."</em> Pernyataan tersebut dalam metode ilmiah berkedudukan sebagai...</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> a) Observasi</label>
+                <label><input type="radio" name="q9" value="b"> b) Rumusan masalah</label>
+                <label><input type="radio" name="q9" value="c"> c) Hipotesis</label>
+                <label><input type="radio" name="q9" value="d"> d) Kesimpulan</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal 10</h4>
+            <p>Tujuan utama dari langkah "mengomunikasikan hasil" dalam metode ilmiah adalah...</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> a) Agar mendapat nilai bagus dari guru</label>
+                <label><input type="radio" name="q10" value="b"> b) Agar hasil dapat ditelaah dan diulang oleh ilmuwan lain</label>
+                <label><input type="radio" name="q10" value="c"> c) Agar eksperimen cepat selesai</label>
+                <label><input type="radio" name="q10" value="d"> d) Agar hipotesis selalu diterima</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>✍️ Bagian B – Essay</h2>
+        <p style="color: #dc3545; font-weight: bold;">⚠️ Jawablah pertanyaan berikut dengan jelas dan tepat! Setiap soal essay bernilai 20 poin.</p>
+        
+        <div class="question-box">
+            <h4>Soal Essay 1</h4>
+            <p>Jelaskan perbedaan IPA sebagai produk, IPA sebagai proses, dan IPA sebagai sikap! Berikan masing-masing satu contoh!</p>
+            <textarea rows="4" placeholder="Tulis jawaban Anda di sini..."></textarea>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal Essay 2</h4>
+            <p>Sebutkan dan jelaskan secara singkat 7 langkah-langkah metode ilmiah secara berurutan!</p>
+            <textarea rows="4" placeholder="Tulis jawaban Anda di sini..."></textarea>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal Essay 3</h4>
+            <p>Dalam sebuah penelitian, seorang siswa ingin mengetahui apakah <em>"Suhu air memengaruhi kecepatan larutnya gula"</em>. Tentukan variabel bebas, variabel terikat, dan variabel kontrol dari penelitian tersebut!</p>
+            <textarea rows="4" placeholder="Tulis jawaban Anda di sini..."></textarea>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal Essay 4</h4>
+            <p>Sebutkan 5 sikap ilmiah yang harus dimiliki oleh seorang ilmuwan saat melakukan penelitian, dan jelaskan maksud dari masing-masing sikap tersebut!</p>
+            <textarea rows="4" placeholder="Tulis jawaban Anda di sini..."></textarea>
+        </div>
+
+        <div class="question-box">
+            <h4>Soal Essay 5</h4>
+            <p>Berikan satu contoh penerapan metode ilmiah dalam memecahkan masalah sederhana dalam kehidupan sehari-hari (misalnya: lampu mati, tanaman layu, atau televisi tidak menyala)!</p>
+            <textarea rows="4" placeholder="Tulis jawaban Anda di sini..."></textarea>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn" onclick="hitungSkor()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+        </div>
+    </div>
+
+    <div id="hasilUjian" class="result-box">
+        <h3>🎉 Terima kasih telah menyelesaikan uji formatif ini!</h3>
+        <p>Silakan cek skor Pilihan Ganda Anda di bawah ini. Untuk skor Essay, silakan isi penilaian dari guru atau penilaian mandiri.</p>
+        
+        <div class="score-grid">
+            <div class="score-item">
+                <label>Skor Pilihan Ganda</label>
+                <span id="skorPG">0</span>/100
+            </div>
+            <div class="score-item">
+                <label>Skor Essay</label>
+                <span id="skorEssay">0</span>/100
+                <input type="number" id="inputEssay" class="essay-input" min="0" max="100" value="0" onchange="hitungTotal()" title="Isi nilai essay (0-100)">
+            </div>
+            <div class="score-item">
+                <label>Skor Total</label>
+                <span id="skorTotal">0</span>/200
+            </div>
+            <div class="score-item">
+                <label>Nilai Akhir</label>
+                <span id="nilaiAkhir">0</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <button class="btn btn-info" onclick="unduhPDF()">📥 UNDUH PDF LENGKAP</button>
+            <button class="btn btn-warning" onclick="unduhSkor()">📊 UNDUH SKOR SAJA</button>
+            <button class="btn" onclick="kirimEmail()">✉️ Kirim Email Guru</button>
+            <button class="btn btn-danger" onclick="mulaiUlang()">🔄 MULAI ULANG</button>
+        </div>
+    </div>
+
+    <div class="chapter-nav">
+        <a href="index.html">🏠 Kembali ke Beranda</a>
+        <a href="1.html">📖 Kembali ke Materi Bab 1</a>
+        <a href="2.html">Lanjut ke Materi Bab 2 →</a>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>IPA Kelas 7 Semester 1</h4>
+            <p>Buku ajar Ilmu Pengetahuan Alam untuk siswa MTs Kelas VII.</p>
+        </div>
+        <div>
+            <h4>Navigasi</h4>
+            <p><a href="index.html">Beranda</a></p>
+            <p><a href="index.html#tentang">Tentang Buku</a></p>
+            <p><a href="index.html#bab">Daftar Bab</a></p>
+            <p><a href="index.html#penulis">Penulis</a></p>
+        </div>
+        <div>
+            <h4>Kontak</h4>
+            <p>📧 <a href="mailto:nensirahayu0@gmail.com">nensirahayu0@gmail.com</a></p>
+            <p>🏫 MTsN 6 Agam</p>
+        </div>
+    </div>
+    <p style="margin-top: 30px; border-top: 1px solid #555; padding-top: 20px;">&copy; 2026 Nensi Rahayu, S.Si - MTsN 6 Agam. Hak cipta dilindungi.</p>
+</footer>
+
+<script>
+    const correctAnswers = {
+        q1: 'b', q2: 'a', q3: 'c', q4: 'b', q5: 'c',
+        q6: 'c', q7: 'b', q8: 'c', q9: 'c', q10: 'b'
+    };
+
+    function hitungSkor() {
+        const nama = document.getElementById('nama').value.trim();
+        const nis = document.getElementById('nis').value.trim();
+        const kelas = document.getElementById('kelas').value;
+
+        if (!nama || !nis || !kelas) {
+            alert('⚠️ Harap lengkapi Nama Lengkap, NIS, dan Kelas terlebih dahulu!');
+            return;
+        }
+
+        let skorPG = 0;
+        let belumDijawab = 0;
+
+        for (let i = 1; i <= 10; i++) {
+            const selected = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selected) {
+                if (selected.value === correctAnswers[`q${i}`]) {
+                    skorPG += 10;
+                }
+            } else {
+                belumDijawab++;
+            }
+        }
+
+        if (belumDijawab > 0) {
+            if (!confirm(`Masih ada ${belumDijawab} soal pilihan ganda yang belum dijawab. Yakin ingin submitted?`)) {
+                return;
+            }
+        }
+
+        document.getElementById('skorPG').innerText = skorPG;
+        hitungTotal();
+        
+        const hasilBox = document.getElementById('hasilUjian');
+        hasilBox.style.display = 'block';
+        hasilBox.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function hitungTotal() {
+        const skorPG = parseInt(document.getElementById('skorPG').innerText) || 0;
+        let skorEssay = parseInt(document.getElementById('inputEssay').value) || 0;
+        
+        if (skorEssay > 100) skorEssay = 100;
+        if (skorEssay < 0) skorEssay = 0;
+        
+        const skorTotal = skorPG + skorEssay;
+        const nilaiAkhir = (skorTotal / 200) * 100;
+        
+        document.getElementById('skorEssay').innerText = skorEssay;
+        document.getElementById('skorTotal').innerText = skorTotal;
+        document.getElementById('nilaiAkhir').innerText = nilaiAkhir.toFixed(1);
+    }
+
+    function unduhPDF() {
+        alert('💡 Tips: Tekan Ctrl+P (atau Cmd+P di Mac) pada browser Anda, lalu pilih "Save as PDF" untuk mengunduh halaman ini sebagai PDF.');
+        window.print();
+    }
+
+    function unduhSkor() {
+        const nama = document.getElementById('nama').value;
+        const nis = document.getElementById('nis').value;
+        const kelas = document.getElementById('kelas').value;
+        const tanggal = document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID');
+        const skorPG = document.getElementById('skorPG').innerText;
+        const skorEssay = document.getElementById('skorEssay').innerText;
+        const skorTotal = document.getElementById('skorTotal').innerText;
+        const nilai = document.getElementById('nilaiAkhir').innerText;
+
+        let text = `LAPORAN HASIL UJI FORMATIF\n`;
+        text += `=================================\n`;
+        text += `BUKU: IPA KELAS 7 SEMESTER 1\n`;
+        text += `BAB: 1 - Hakikat Sains dan Metode Ilmiah\n\n`;
+        text += `DATA SISWA\n`;
+        text += `Nama : ${nama}\n`;
+        text += `NIS : ${nis}\n`;
+        text += `Kelas : ${kelas}\n`;
+        text += `Tanggal : ${tanggal}\n\n`;
+        text += `HASIL NILAI\n`;
+        text += `Skor Pilihan Ganda : ${skorPG} / 100\n`;
+        text += `Skor Essay : ${skorEssay} / 100\n`;
+        text += `-------------------------------\n`;
+        text += `Skor Total : ${skorTotal} / 200\n`;
+        text += `Nilai Akhir : ${nilai}\n\n`;
+        text += `Guru Mata Pelajaran,\n\n\n\n(Nensi Rahayu, S.Si)\n`;
+        
+        const blob = new Blob([text], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Skor_Uji_Formatif_Bab1_${nama.replace(/\s+/g, '_')}.txt`;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    function kirimEmail() {
+        const nama = document.getElementById('nama').value;
+        const nis = document.getElementById('nis').value;
+        const kelas = document.getElementById('kelas').value;
+        const skorPG = document.getElementById('skorPG').innerText;
+        const skorTotal = document.getElementById('skorTotal').innerText;
+        const nilai = document.getElementById('nilaiAkhir').innerText;
+
+        const subject = encodeURIComponent(`Laporan Uji Formatif Bab 1 - ${nama} (${kelas})`);
+        const body = encodeURIComponent(
+            `Yth. Ibu Nensi Rahayu, S.Si,\n\n` +
+            `Berikut adalah laporan hasil Uji Formatif Bab 1 (Hakikat Sains dan Metode Ilmiah) saya:\n\n` +
+            `Nama : ${nama}\n` +
+            `NIS : ${nis}\n` +
+            `Kelas : ${kelas}\n\n` +
+            `Skor Pilihan Ganda: ${skorPG}/100\n` +
+            `Skor Total : ${skorTotal}/200\n` +
+            `Nilai Akhir : ${nilai}\n\n` +
+            `Terima kasih.`
+        );
+
+        window.location.href = `mailto:nensirahayu0@gmail.com?subject=${subject}&body=${body}`;
+    }
+
+    function mulaiUlang() {
+        if (confirm('⚠️ Yakin ingin mengulang ujian? Semua jawaban dan skor akan dihapus.')) {
+            location.reload();
+        }
+    }
+</script>
+
+</body>
+</html>

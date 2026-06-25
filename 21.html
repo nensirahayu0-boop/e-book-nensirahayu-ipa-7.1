@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS - Ujian Tengah Semester | IPA Kelas 7 Semester 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background: linear-gradient(135deg, #0056b3, #003d82);
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #003d82;
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover { text-decoration: underline; }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .breadcrumb a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fff;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-top: 5px solid #ffc107;
+        }
+        .hero h1 { color: #0056b3; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; color: #555; }
+        .section {
+            background: #fff;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0056b3;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .stimulus {
+            background: #f8f9fa;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            font-style: italic;
+            color: #444;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        .form-row .form-group { flex: 1; }
+        .question-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #0056b3;
+        }
+        .question-box h4 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+        .question-number {
+            display: inline-block;
+            background: #0056b3;
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-right: 8px;
+        }
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .options label:hover {
+            background: #e9ecef;
+            border-color: #0056b3;
+        }
+        .options input[type="radio"],
+        .options input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .btn {
+            display: inline-block;
+            background: #28a745;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-right: 10px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #218838; }
+        .btn-warning { background: #ffc107; color: #333; }
+        .btn-warning:hover { background: #e0a800; }
+        .btn-danger { background: #dc3545; }
+        .btn-danger:hover { background: #c82333; }
+        .btn-info { background: #17a2b8; }
+        .btn-info:hover { background: #138496; }
+        .result-box {
+            background: #d4edda;
+            border: 2px solid #c3e6cb;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+            display: none;
+            text-align: center;
+        }
+        .result-box h3 {
+            color: #155724;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .score-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .score-item span {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .score-item label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .bs-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .bs-options label {
+            flex: 1;
+            padding: 12px;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .bs-options label:hover { border-color: #0056b3; }
+        .bs-options input[type="radio"] { margin-right: 8px; }
+        .match-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .match-table th {
+            background: #0056b3;
+            color: #fff;
+            padding: 12px;
+            text-align: left;
+        }
+        .match-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            background: #fff;
+        }
+        .match-table select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.95rem;
+        }
+        .section-divider {
+            background: linear-gradient(135deg, #0056b3, #003d82);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin: 30px 0 20px 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        .kompleks-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            color: #856404;
+        }
+        footer {
+            background: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer a:hover { text-decoration: underline; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: left;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        .footer-grid h4 {
+            border-bottom: 1px solid #555;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .chapter-nav a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+            padding: 10px 15px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .chapter-nav a:hover {
+            background: #0056b3;
+            color: #fff;
+        }
+        @media (max-width: 600px) {
+            .form-row { flex-direction: column; }
+            .bs-options { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📝 Ujian Tengah Semester (UTS)</h1>
+    <p>IPA Kelas 7 Semester 1 | Materi Bab 1 - 20</p>
+</header>
+
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="index.html#bab">Daftar Bab</a>
+    <a href="index.html#penulis">Penulis</a>
+</nav>
+
+<div class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">IPA Kelas 7 Semester 1</a> &gt; 
+        <a href="index.html#bab">Daftar Bab</a> &gt; 
+        <strong>UTS - Ujian Tengah Semester</strong>
+    </div>
+
+    <div class="hero">
+        <h1>📝 UJIAN TENGAH SEMESTER</h1>
+        <h2 style="color: #0056b3; margin-top: 10px;">IPA Kelas 7 Semester 1</h2>
+        <p>Materi: Bab 1 - Bab 20 (Hakikat Sains, Laboratorium, Pengukuran, Zat & Materi, Suhu & Kalor)</p>
+        <div class="info-box" style="text-align: left; max-width: 800px; margin: 20px auto;">
+            <p><strong>📋 Bagian A:</strong> Pilihan Ganda HOTS (20 soal × 5 poin = 100)</p>
+            <p><strong>📋 Bagian B:</strong> Pilihan Ganda Kompleks (10 soal × 5 poin = 50)</p>
+            <p><strong>✅ Bagian C:</strong> Benar/Salah (5 soal × 4 poin = 20)</p>
+            <p><strong>🔗 Bagian D:</strong> Menjodohkan (5 soal × 6 poin = 30)</p>
+            <p><strong>Total Skor:</strong> 200 poin | <strong>Waktu:</strong> 90 menit</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📋 Data Siswa</h2>
+        <form id="formSiswa">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap <span style="color:red;">*</span></label>
+                    <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                </div>
+                <div class="form-group">
+                    <label for="nis">NIS <span style="color:red;">*</span></label>
+                    <input type="text" id="nis" required placeholder="Nomor Induk Siswa">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="tanggal">📅 Tanggal Ujian</label>
+                    <input type="date" id="tanggal">
+                </div>
+                <div class="form-group">
+                    <label for="kelas">Kelas <span style="color:red;">*</span></label>
+                    <select id="kelas" required>
+                        <option value="">Pilih Kelas</option>
+                        <option value="VII A">VII A</option>
+                        <option value="VII B">VII B</option>
+                        <option value="VII C">VII C</option>
+                        <option value="VII D">VII D</option>
+                        <option value="VII E">VII E</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- =================== BAGIAN A: PG HOTS =================== -->
+    <div class="section-divider">📋 BAGIAN A – Pilihan Ganda HOTS (20 soal × 5 poin = 100)</div>
+    <div class="section">
+        <p style="color: #dc3545; font-weight: bold;">⚠️ Bacalah setiap narasi stimulus dengan cermat sebelum menjawab! Setiap soal bernilai 5 poin.</p>
+
+        <!-- Soal 1 -->
+        <div class="question-box">
+            <h4><span class="question-number">1</span> Metode Ilmiah</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Seorang siswa MTsN 6 Agam mengamati bahwa tanaman cabai di halaman sekolah yang mendapat sinar matahari penuh tumbuh lebih subur dibandingkan tanaman cabai di bawah pohon rindang. Ia kemudian merumuskan masalah: <em>"Apakah intensitas cahaya matahari memengaruhi pertumbuhan tanaman cabai?"</em>
+            </div>
+            <p>Sebelum melakukan eksperimen, langkah yang <strong>harus dilakukan</strong> siswa tersebut selanjutnya adalah...</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> a) Menarik kesimpulan dari pengamatan</label>
+                <label><input type="radio" name="q1" value="b"> b) Menyusun hipotesis sebagai jawaban sementara</label>
+                <label><input type="radio" name="q1" value="c"> c) Mengomunikasikan hasil kepada teman</label>
+                <label><input type="radio" name="q1" value="d"> d) Menganalisis data yang sudah ada</label>
+            </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="question-box">
+            <h4><span class="question-number">2</span> Keselamatan Laboratorium</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Di laboratorium IPA MTsN 6 Agam, Andi sedang melakukan praktikum pemanasan larutan. Tiba-tiba gelas kimia pecah dan larutan asam sulfat encer tumpah mengenai tangannya.
+            </div>
+            <p>Tindakan <strong>pertama yang paling tepat</strong> dilakukan Andi adalah...</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> a) Mengoleskan pasta gigi pada kulit yang terkena</label>
+                <label><input type="radio" name="q2" value="b"> b) Membalut tangan dengan kain kering</label>
+                <label><input type="radio" name="q2" value="c"> c) Membilas dengan air mengalir minimal 15 menit</label>
+                <label><input type="radio" name="q2" value="d"> d) Memberi salep luka bakar segera</label>
+            </div>
+        </div>
+
+        <!-- Soal 3 -->
+        <div class="question-box">
+            <h4><span class="question-number">3</span> Ketidakpastian Pengukuran</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Seorang siswa mengukur panjang sebuah pensil dengan penggaris yang memiliki skala terkecil 1 mm. Hasil pengukuran menunjukkan angka 12,5 cm.
+            </div>
+            <p>Penulisan hasil pengukuran yang <strong>benar beserta ketidakpastiannya</strong> adalah...</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> a) (12,5 ± 0,1) cm</label>
+                <label><input type="radio" name="q3" value="b"> b) (12,5 ± 0,5) cm</label>
+                <label><input type="radio" name="q3" value="c"> c) (12,5 ± 0,05) cm</label>
+                <label><input type="radio" name="q3" value="d"> d) (12,5 ± 1) cm</label>
+            </div>
+        </div>
+
+        <!-- Soal 4 -->
+        <div class="question-box">
+            <h4><span class="question-number">4</span> Identifikasi Besaran</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Perhatikan data berikut:<br>
+                (1) Massa jenis air = 1.000 kg/m³<br>
+                (2) Suhu udara = 30°C<br>
+                (3) Luas lapangan = 500 m²<br>
+                (4) Kuat arus listrik = 2 A<br>
+                (5) Kecepatan mobil = 60 km/jam
+            </div>
+            <p>Besaran yang termasuk <strong>besaran pokok</strong> ditunjukkan oleh nomor...</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> a) (1) dan (2)</label>
+                <label><input type="radio" name="q4" value="b"> b) (2) dan (4)</label>
+                <label><input type="radio" name="q4" value="c"> c) (3) dan (5)</label>
+                <label><input type="radio" name="q4" value="d"> d) (1) dan (4)</label>
+            </div>
+        </div>
+
+        <!-- Soal 5 -->
+        <div class="question-box">
+            <h4><span class="question-number">5</span> Konversi Satuan</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Seorang pedagang di pasar membeli 2,5 kuintal beras untuk dijual kembali.
+            </div>
+            <p>Jika 1 kuintal = 100 kg, maka massa beras yang dibeli pedagang tersebut dalam <strong>satuan gram</strong> adalah...</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> a) 25.000 gram</label>
+                <label><input type="radio" name="q5" value="b"> b) 250.000 gram</label>
+                <label><input type="radio" name="q5" value="c"> c) 2.500.000 gram</label>
+                <label><input type="radio" name="q5" value="d"> d) 25.000.000 gram</label>
+            </div>
+        </div>
+
+        <!-- Soal 6 -->
+        <div class="question-box">
+            <h4><span class="question-number">6</span> Pemilihan Alat Ukur</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Seorang teknisi perlu mengukur diameter dalam sebuah pipa kecil dengan ketelitian 0,1 mm.
+            </div>
+            <p>Alat ukur yang <strong>paling tepat</strong> digunakan adalah...</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> a) Penggaris/mistar</label>
+                <label><input type="radio" name="q6" value="b"> b) Rol meter</label>
+                <label><input type="radio" name="q6" value="c"> c) Jangka sorong</label>
+                <label><input type="radio" name="q6" value="d"> d) Mikrometer sekrup</label>
+            </div>
+        </div>
+
+        <!-- Soal 7 -->
+        <div class="question-box">
+            <h4><span class="question-number">7</span> Wujud Zat</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Perhatikan tabel karakteristik zat berikut:<br>
+                • Zat P → Bentuk tetap, Volume tetap<br>
+                • Zat Q → Bentuk berubah mengikuti wadah, Volume tetap<br>
+                • Zat R → Bentuk berubah, Volume berubah
+            </div>
+            <p>Zat P, Q, dan R berturut-turut berwujud...</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> a) Gas, cair, padat</label>
+                <label><input type="radio" name="q7" value="b"> b) Padat, cair, gas</label>
+                <label><input type="radio" name="q7" value="c"> c) Cair, padat, gas</label>
+                <label><input type="radio" name="q7" value="d"> d) Padat, gas, cair</label>
+            </div>
+        </div>
+
+        <!-- Soal 8 -->
+        <div class="question-box">
+            <h4><span class="question-number">8</span> Teori Partikel</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Ketika 2 sendok gula dilarutkan dalam 200 mL air, volume larutan akhir tidak bertambah secara signifikan (tetap sekitar 200 mL).
+            </div>
+            <p>Fenomena ini dapat dijelaskan dengan teori partikel bahwa...</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> a) Partikel gula menyusut saat larut dalam air</label>
+                <label><input type="radio" name="q8" value="b"> b) Terdapat ruang kosong antar partikel air yang ditempati partikel gula</label>
+                <label><input type="radio" name="q8" value="c"> c) Partikel air dan gula saling tolak-menolak</label>
+                <label><input type="radio" name="q8" value="d"> d) Gula berubah menjadi air setelah dilarutkan</label>
+            </div>
+        </div>
+
+        <!-- Soal 9 -->
+        <div class="question-box">
+            <h4><span class="question-number">9</span> Perubahan Wujud</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Pada pagi hari yang dingin di daerah pegunungan, kaca mobil bagian luar menjadi basah meskipun tidak turun hujan.
+            </div>
+            <p>Peristiwa ini merupakan contoh perubahan wujud...</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> a) Menguap (cair → gas)</label>
+                <label><input type="radio" name="q9" value="b"> b) Mengembun (gas → cair)</label>
+                <label><input type="radio" name="q9" value="c"> c) Mencair (padat → cair)</label>
+                <label><input type="radio" name="q9" value="d"> d) Menyublim (padat → gas)</label>
+            </div>
+        </div>
+
+        <!-- Soal 10 -->
+        <div class="question-box">
+            <h4><span class="question-number">10</span> Sifat Materi</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Seorang siswa menyalakan korek api. Kayu pada ujung korek api terbakar dan menghasilkan abu serta asap.
+            </div>
+            <p>Perubahan yang terjadi pada kayu tersebut termasuk perubahan...</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> a) Fisika karena hanya berubah wujud</label>
+                <label><input type="radio" name="q10" value="b"> b) Kimia karena menghasilkan zat baru (abu dan asap)</label>
+                <label><input type="radio" name="q10" value="c"> c) Fisika karena dapat kembali ke bentuk semula</label>
+                <label><input type="radio" name="q10" value="d"> d) Wujud karena berubah dari padat menjadi gas</label>
+            </div>
+        </div>
+
+        <!-- Soal 11 -->
+        <div class="question-box">
+            <h4><span class="question-number">11</span> Pemisahan Campuran</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Seorang petani garam di pesisir pantai mendapatkan garam dari air laut dengan cara membiarkan air laut menguap di tambak yang terkena sinar matahari.
+            </div>
+            <p>Metode pemisahan campuran yang digunakan petani garam tersebut adalah...</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="a"> a) Filtrasi (penyaringan)</label>
+                <label><input type="radio" name="q11" value="b"> b) Destilasi (penyulingan)</label>
+                <label><input type="radio" name="q11" value="c"> c) Evaporasi (penguapan)</label>
+                <label><input type="radio" name="q11" value="d"> d) Kromatografi</label>
+            </div>
+        </div>
+
+        <!-- Soal 12 -->
+        <div class="question-box">
+            <h4><span class="question-number">12</span> Konversi Suhu</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Seorang siswa mengukur suhu air panas dengan termometer Celsius menunjukkan angka 80°C.
+            </div>
+            <p>Jika suhu tersebut diukur dengan termometer <strong>Reamur</strong>, maka akan menunjukkan angka...</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="a"> a) 50°R</label>
+                <label><input type="radio" name="q12" value="b"> b) 64°R</label>
+                <label><input type="radio" name="q12" value="c"> c) 80°R</label>
+                <label><input type="radio" name="q12" value="d"> d) 100°R</label>
+            </div>
+        </div>
+
+        <!-- Soal 13 -->
+        <div class="question-box">
+            <h4><span class="question-number">13</span> Aplikasi Pemuaian</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Seorang teknisi memasang kaca jendela dengan memberi celah kecil di sekelilingnya pada rangka logam.
+            </div>
+            <p>Pemasangan dengan cara ini bertujuan untuk...</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="a"> a) Agar kaca terlihat lebih indah</label>
+                <label><input type="radio" name="q13" value="b"> b) Mencegah kaca pecah saat memuai ketika suhu naik</label>
+                <label><input type="radio" name="q13" value="c"> c) Menghemat bahan kaca</label>
+                <label><input type="radio" name="q13" value="d"> d) Memudahkan pemasangan kaca</label>
+            </div>
+        </div>
+
+        <!-- Soal 14 -->
+        <div class="question-box">
+            <h4><span class="question-number">14</span> Perhitungan Kalor</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Ibu merebus 2 kg air pada suhu 30°C hingga mendidih (100°C). Diketahui kalor jenis air = 4.200 J/kg°C.
+            </div>
+            <p>Kalor yang diperlukan untuk memanaskan air tersebut adalah...</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="a"> a) 294.000 J</label>
+                <label><input type="radio" name="q14" value="b"> b) 588.000 J</label>
+                <label><input type="radio" name="q14" value="c"> c) 840.000 J</label>
+                <label><input type="radio" name="q14" value="d"> d) 1.176.000 J</label>
+            </div>
+        </div>
+
+        <!-- Soal 15 -->
+        <div class="question-box">
+            <h4><span class="question-number">15</span> Konduksi</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Seorang siswa memegang sendok logam yang dicelupkan ke dalam air panas. Setelah beberapa saat, tangan siswa tersebut merasakan panas pada ujung sendok yang dipegang.
+            </div>
+            <p>Perpindahan kalor yang terjadi <strong>pada sendok logam</strong> tersebut adalah...</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="a"> a) Konveksi</label>
+                <label><input type="radio" name="q15" value="b"> b) Radiasi</label>
+                <label><input type="radio" name="q15" value="c"> c) Konduksi</label>
+                <label><input type="radio" name="q15" value="d"> d) Evaporasi</label>
+            </div>
+        </div>
+
+        <!-- Soal 16 -->
+        <div class="question-box">
+            <h4><span class="question-number">16</span> Konveksi - Angin Laut</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Pada siang hari yang panas di pesisir pantai, angin bertiup dari laut ke darat (disebut angin laut).
+            </div>
+            <p>Peristiwa ini terjadi karena...</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="a"> a) Darat lebih cepat panas daripada laut, udara di darat naik digantikan udara dingin dari laut</label>
+                <label><input type="radio" name="q16" value="b"> b) Laut lebih cepat panas daripada darat sehingga udara bergerak ke darat</label>
+                <label><input type="radio" name="q16" value="c"> c) Udara di laut lebih dingin sehingga turun ke darat</label>
+                <label><input type="radio" name="q16" value="d"> d) Tekanan udara di laut selalu lebih tinggi</label>
+            </div>
+        </div>
+
+        <!-- Soal 17 -->
+        <div class="question-box">
+            <h4><span class="question-number">17</span> Radiasi</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Seorang siswa duduk di dekat api unggun pada malam hari. Meskipun tidak menyentuh api dan berada di tempat terbuka, siswa tersebut merasakan panas.
+            </div>
+            <p>Perpindahan kalor yang dialami siswa tersebut adalah...</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="a"> a) Konduksi</label>
+                <label><input type="radio" name="q17" value="b"> b) Konveksi</label>
+                <label><input type="radio" name="q17" value="c"> c) Radiasi</label>
+                <label><input type="radio" name="q17" value="d"> d) Evaporasi</label>
+            </div>
+        </div>
+
+        <!-- Soal 18 -->
+        <div class="question-box">
+            <h4><span class="question-number">18</span> Analisis Perubahan Wujud</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Perhatikan peristiwa berikut:<br>
+                (1) Air mendidih menjadi uap<br>
+                (2) Es batu mencair di udara terbuka<br>
+                (3) Kapur barus lama-kelamaan mengecil<br>
+                (4) Uap air menjadi embun di pagi hari
+            </div>
+            <p>Perubahan wujud yang <strong>menyerap kalor</strong> ditunjukkan oleh nomor...</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="a"> a) (1) dan (2) saja</label>
+                <label><input type="radio" name="q18" value="b"> b) (1), (2), dan (3)</label>
+                <label><input type="radio" name="q18" value="c"> c) (2) dan (4)</label>
+                <label><input type="radio" name="q18" value="d"> d) (3) dan (4)</label>
+            </div>
+        </div>
+
+        <!-- Soal 19 -->
+        <div class="question-box">
+            <h4><span class="question-number">19</span> Penerapan Penguapan</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Seorang nelayan tradisional menentukan arah datangnya angin dengan membasahi jari telunjuknya dan mengangkatnya ke udara. Ia merasakan sisi jari yang basah lebih dingin.
+            </div>
+            <p>Prinsip yang digunakan nelayan tersebut berkaitan dengan...</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="a"> a) Konduksi kalor pada kulit</label>
+                <label><input type="radio" name="q19" value="b"> b) Penguapan yang menyebabkan rasa dingin di sisi yang menghadap angin</label>
+                <label><input type="radio" name="q19" value="c"> c) Radiasi panas dari matahari</label>
+                <label><input type="radio" name="q19" value="d"> d) Pemuaian udara di sekitar jari</label>
+            </div>
+        </div>
+
+        <!-- Soal 20 -->
+        <div class="question-box">
+            <h4><span class="question-number">20</span> Integrasi Konsep</h4>
+            <div class="stimulus">
+                <strong>Stimulus:</strong> Seorang siswa melakukan percobaan memanaskan air dalam gelas kimia menggunakan pembakar Bunsen. Ia meneteskan tinta ke dalam air dan mengamati bahwa tinta bergerak naik dari dasar gelas, kemudian turun di bagian tepi, membentuk aliran melingkar.
+            </div>
+            <p>Fenomena ini menunjukkan bahwa...</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="a"> a) Kalor berpindah secara konduksi melalui air</label>
+                <label><input type="radio" name="q20" value="b"> b) Terjadi konveksi di mana air panas naik dan air dingin turun membentuk arus</label>
+                <label><input type="radio" name="q20" value="c"> c) Air memancarkan kalor secara radiasi</label>
+                <label><input type="radio" name="q20" value="d"> d) Air mengalami pemuaian volume saja</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== BAGIAN B: PG KOMPLEKS =================== -->
+    <div class="section-divider">📋 BAGIAN B – Pilihan Ganda Kompleks (10 soal × 5 poin = 50)</div>
+    <div class="section">
+        <div class="kompleks-note">
+            ⚠️ <strong>PENTING:</strong> Setiap soal memiliki <strong>LEBIH DARI SATU jawaban benar</strong>. Pilihlah SEMUA jawaban yang benar! Skor 5 jika semua jawaban benar, skor 2 jika sebagian benar, skor 0 jika ada jawaban salah.
+        </div>
+
+        <!-- Soal K1 -->
+        <div class="question-box">
+            <h4><span class="question-number">K1</span> Metode Ilmiah</h4>
+            <p>Pilihlah <strong>SEMUA</strong> pernyataan yang benar tentang metode ilmiah!</p>
+            <div class="options">
+                <label><input type="checkbox" name="k1" value="a"> a) Observasi dapat dilakukan dengan panca indra atau alat bantu</label>
+                <label><input type="checkbox" name="k1" value="b"> b) Hipotesis adalah jawaban pasti yang tidak perlu diuji</label>
+                <label><input type="checkbox" name="k1" value="c"> c) Variabel bebas adalah faktor yang diubah oleh peneliti</label>
+                <label><input type="checkbox" name="k1" value="d"> d) Kesimpulan harus didukung oleh bukti empiris</label>
+                <label><input type="checkbox" name="k1" value="e"> e) Sikap ilmiah meliputi jujur, objektif, dan skeptis</label>
+            </div>
+        </div>
+
+        <!-- Soal K2 -->
+        <div class="question-box">
+            <h4><span class="question-number">K2</span> Simbol Bahan Kimia</h4>
+            <p>Pilihlah <strong>SEMUA</strong> pasangan simbol bahaya dan artinya yang BENAR!</p>
+            <div class="options">
+                <label><input type="checkbox" name="k2" value="a"> a) 🔥 Flammable – Mudah terbakar</label>
+                <label><input type="checkbox" name="k2" value="b"> b) ☠️ Toxic – Beracun</label>
+                <label><input type="checkbox" name="k2" value="c"> c) ⚠️ Corrosive – Korosif/merusak</label>
+                <label><input type="checkbox" name="k2" value="d"> d) 💥 Explosive – Mudah meledak</label>
+                <label><input type="checkbox" name="k2" value="e"> e) ☢️ Radioactive – Radioaktif</label>
+            </div>
+        </div>
+
+        <!-- Soal K3 -->
+        <div class="question-box">
+            <h4><span class="question-number">K3</span> Besaran Pokok</h4>
+            <p>Pilihlah <strong>SEMUA</strong> pasangan besaran pokok beserta satuan SI-nya yang BENAR!</p>
+            <div class="options">
+                <label><input type="checkbox" name="k3" value="a"> a) Panjang – meter (m)</label>
+                <label><input type="checkbox" name="k3" value="b"> b) Massa – gram (g)</label>
+                <label><input type="checkbox" name="k3" value="c"> c) Waktu – sekon (s)</label>
+                <label><input type="checkbox" name="k3" value="d"> d) Suhu – Celcius (°C)</label>
+                <label><input type="checkbox" name="k3" value="e"> e) Kuat arus listrik – Ampere (A)</label>
+            </div>
+        </div>
+
+        <!-- Soal K4 -->
+        <div class="question-box">
+            <h4><span class="question-number">K4</span> Alat Ukur</h4>
+            <p>Pilihlah <strong>SEMUA</strong> pernyataan yang BENAR tentang alat ukur!</p>
+            <div class="options">
+                <label><input type="checkbox" name="k4" value="a"> a) Jangka sorong dapat mengukur diameter dalam dan luar</label>
+                <label><input type="checkbox" name="k4" value="b"> b) Mikrometer sekrup memiliki ketelitian 0,01 mm</label>
+                <label><input type="checkbox" name="k4" value="c"> c) Neraca Ohaus digunakan untuk mengukur volume zat cair</label>
+                <label><input type="checkbox" name="k4" value="d"> d) Stopwatch digunakan untuk mengukur selang waktu</label>
+                <label><input type="checkbox" name="k4" value="e"> e) Termometer digunakan untuk mengukur suhu</label>
+            </div>
+        </div>
+
+        <!-- Soal K5 -->
+        <div class="question-box">
+            <h4><span class="question-number">K5</span> Wujud Zat</h4>
+            <p>Pilihlah <strong>SEMUA</strong> pernyataan yang BENAR tentang wujud zat!</p>
+            <div class="options">
+                <label><input type="checkbox" name="k5" value="a"> a) Zat padat memiliki bentuk dan volume tetap</label>
+                <label><input type="checkbox" name="k5" value="b"> b) Zat cair memiliki bentuk tetap tetapi volume berubah</label>
+                <label><input type="checkbox" name="k5" value="c"> c) Zat gas memiliki bentuk dan volume yang berubah-ubah</label>
+                <label><input type="checkbox" name="k5" value="d"> d) Partikel zat padat bergerak sangat bebas</label>
+                <label><input type="checkbox" name="k5" value="e"> e) Zat cair dapat mengalir karena partikelnya dapat bergeser</label>
+            </div>
+        </div>
+
+        <!-- Soal K6 -->
+        <div class="question-box">
+            <h4><span class="question-number">K6</span> Perubahan Wujud</h4>
+            <p>Pilihlah <strong>SEMUA</strong> perubahan wujud yang <strong>melepaskan kalor</strong>!</p>
+            <div class="options">
+                <label><input type="checkbox" name="k6" value="a"> a) Membeku (cair → padat)</label>
+                <label><input type="checkbox" name="k6" value="b"> b) Menguap (cair → gas)</label>
+                <label><input type="checkbox" name="k6" value="c"> c) Mengembun (gas → cair)</label>
+                <label><input type="checkbox" name="k6" value="d"> d) Mencair (padat → cair)</label>
+                <label><input type="checkbox" name="k6" value="e"> e) Menyublim (padat → gas)</label>
+            </div>
+        </div>
+
+        <!-- Soal K7 -->
+        <div class="question-box">
+            <h4><span class="question-number">K7</span> Konsep Suhu</h4>
+            <p>Pilihlah <strong>SEMUA</strong> pernyataan yang BENAR tentang suhu!</p>
+            <div class="options">
+                <label><input type="checkbox" name="k7" value="a"> a) Suhu termasuk besaran pokok</label>
+                <label><input type="checkbox" name="k7" value="b"> b) Satuan SI suhu adalah Kelvin</label>
+                <label><input type="checkbox" name="k7" value="c"> c) Termometer digunakan untuk mengukur suhu</label>
+                <label><input type="checkbox" name="k7" value="d"> d) Suhu 0°C sama dengan 32°F</label>
+                <label><input type="checkbox" name="k7" value="e"> e) Suhu 100°C sama dengan 80°R</label>
+            </div>
+        </div>
+
+        <!-- Soal K8 -->
+        <div class="question-box">
+            <h4><span class="question-number">K8</span> Pemuaian</h4>
+            <p>Pilihlah <strong>SEMUA</strong> pernyataan yang BENAR tentang pemuaian!</p>
+            <div class="options">
+                <label><input type="checkbox" name="k8" value="a"> a) Pemuaian adalah bertambahnya ukuran zat akibat kenaikan suhu</label>
+                <label><input type="checkbox" name="k8" value="b"> b) Zat padat, cair, dan gas dapat memuai</label>
+                <label><input type="checkbox" name="k8" value="c"> c) Bimetal digunakan dalam termostat karena prinsip pemuaian</label>
+                <label><input type="checkbox" name="k8" value="d"> d) Pemuaian panjang bergantung pada panjang awal, koefisien muai, dan perubahan suhu</label>
+                <label><input type="checkbox" name="k8" value="e"> e) Air memuai saat didinginkan dari 4°C ke 0°C (anomali air)</label>
+            </div>
+        </div>
+
+        <!-- Soal K9 -->
+        <div class="question-box">
+            <h4><span class="question-number">K9</span> Faktor Kalor</h4>
+            <p>Pilihlah <strong>SEMUA</strong> faktor yang memengaruhi besar kalor yang diperlukan untuk menaikkan suhu suatu zat!</p>
+            <div class="options">
+                <label><input type="checkbox" name="k9" value="a"> a) Massa zat</label>
+                <label><input type="checkbox" name="k9" value="b"> b) Kalor jenis zat</label>
+                <label><input type="checkbox" name="k9" value="c"> c) Perubahan suhu</label>
+                <label><input type="checkbox" name="k9" value="d"> d) Wujud zat</label>
+                <label><input type="checkbox" name="k9" value="e"> e) Warna zat</label>
+            </div>
+        </div>
+
+        <!-- Soal K10 -->
+        <div class="question-box">
+            <h4><span class="question-number">K10</span> Perpindahan Kalor</h4>
+            <p>Pilihlah <strong>SEMUA</strong> pernyataan yang BENAR tentang perpindahan kalor!</p>
+            <div class="options">
+                <label><input type="checkbox" name="k10" value="a"> a) Konduksi adalah perpindahan kalor melalui zat perantara tanpa disertai perpindahan partikel</label>
+                <label><input type="checkbox" name="k10" value="b"> b) Konveksi adalah perpindahan kalor yang disertai aliran zat</label>
+                <label><input type="checkbox" name="k10" value="c"> c) Radiasi adalah perpindahan kalor tanpa zat perantara</label>
+                <label><input type="checkbox" name="k10" value="d"> d) Termos menggunakan prinsip konduksi untuk menjaga suhu</label>
+                <label><input type="checkbox" name="k10" value="e"> e) Api unggun memancarkan kalor secara radiasi</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== BAGIAN C: BENAR/SALAH =================== -->
+    <div class="section-divider">✅ BAGIAN C – Benar / Salah (5 soal × 4 poin = 20)</div>
+    <div class="section">
+        <p style="color: #dc3545; font-weight: bold;">⚠️ Tentukan apakah setiap pernyataan berikut BENAR atau SALAH! Setiap soal bernilai 4 poin.</p>
+
+        <div class="question-box">
+            <h4><span class="question-number">BS1</span> IPA memiliki tiga dimensi utama yaitu produk, proses, dan sikap.</h4>
+            <div class="bs-options">
+                <label><input type="radio" name="bs1" value="benar"> BENAR</label>
+                <label><input type="radio" name="bs1" value="salah"> SALAH</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4><span class="question-number">BS2</span> Variabel kontrol adalah faktor yang diubah-ubah oleh peneliti dalam eksperimen.</h4>
+            <div class="bs-options">
+                <label><input type="radio" name="bs2" value="benar"> BENAR</label>
+                <label><input type="radio" name="bs2" value="salah"> SALAH</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4><span class="question-number">BS3</span> Simbol ☠️ pada kemasan bahan kimia menunjukkan bahan tersebut bersifat mudah terbakar.</h4>
+            <div class="bs-options">
+                <label><input type="radio" name="bs3" value="benar"> BENAR</label>
+                <label><input type="radio" name="bs3" value="salah"> SALAH</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4><span class="question-number">BS4</span> Besaran turunan adalah besaran yang diturunkan dari satu atau lebih besaran pokok.</h4>
+            <div class="bs-options">
+                <label><input type="radio" name="bs4" value="benar"> BENAR</label>
+                <label><input type="radio" name="bs4" value="salah"> SALAH</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <h4><span class="question-number">BS5</span> Konveksi hanya dapat terjadi pada zat padat.</h4>
+            <div class="bs-options">
+                <label><input type="radio" name="bs5" value="benar"> BENAR</label>
+                <label><input type="radio" name="bs5" value="salah"> SALAH</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== BAGIAN D: MENJODOHKAN =================== -->
+    <div class="section-divider">🔗 BAGIAN D – Menjodohkan (5 soal × 6 poin = 30)</div>
+    <div class="section">
+        <p style="color: #dc3545; font-weight: bold;">⚠️ Pasangkan setiap pernyataan di kolom kiri dengan jawaban yang paling tepat di kolom kanan! Setiap soal bernilai 6 poin.</p>
+
+        <table class="match-table">
+            <tr>
+                <th style="width: 50%;">Pernyataan</th>
+                <th style="width: 50%;">Pilihan Jawaban</th>
+            </tr>
+            <tr>
+                <td><strong>1.</strong> Alat ukur yang digunakan untuk mengukur massa benda di laboratorium dengan ketelitian tinggi</td>
+                <td>
+                    <select id="jodoh1">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="A">A. Mengembun</option>
+                        <option value="B">B. Neraca Ohaus</option>
+                        <option value="C">C. Radiasi</option>
+                        <option value="D">D. Destilasi</option>
+                        <option value="E">E. Sekon</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>2.</strong> Satuan SI untuk besaran waktu</td>
+                <td>
+                    <select id="jodoh2">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="A">A. Mengembun</option>
+                        <option value="B">B. Neraca Ohaus</option>
+                        <option value="C">C. Radiasi</option>
+                        <option value="D">D. Destilasi</option>
+                        <option value="E">E. Sekon</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>3.</strong> Perubahan wujud dari gas menjadi cair</td>
+                <td>
+                    <select id="jodoh3">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="A">A. Mengembun</option>
+                        <option value="B">B. Neraca Ohaus</option>
+                        <option value="C">C. Radiasi</option>
+                        <option value="D">D. Destilasi</option>
+                        <option value="E">E. Sekon</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>4.</strong> Perpindahan kalor tanpa memerlukan zat perantara</td>
+                <td>
+                    <select id="jodoh4">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="A">A. Mengembun</option>
+                        <option value="B">B. Neraca Ohaus</option>
+                        <option value="C">C. Radiasi</option>
+                        <option value="D">D. Destilasi</option>
+                        <option value="E">E. Sekon</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>5.</strong> Metode pemisahan campuran berdasarkan perbedaan titik didih</td>
+                <td>
+                    <select id="jodoh5">
+                        <option value="">-- Pilih Jawaban --</option>
+                        <option value="A">A. Mengembun</option>
+                        <option value="B">B. Neraca Ohaus</option>
+                        <option value="C">C. Radiasi</option>
+                        <option value="D">D. Destilasi</option>
+                        <option value="E">E. Sekon</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- =================== TOMBOL KIRIM =================== -->
+    <div style="text-align: center; margin: 30px 0;">
+        <button class="btn" onclick="hitungSkor()" style="font-size: 1.1rem; padding: 15px 30px;">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+    </div>
+
+    <!-- =================== HASIL UJIAN =================== -->
+    <div id="hasilUjian" class="result-box">
+        <h3>🎉 Terima kasih telah menyelesaikan UTS!</h3>
+        <p>Silakan cek skor Anda di bawah ini. Skor Pilihan Ganda, PG Kompleks, dan Benar/Salah dihitung otomatis. Skor Menjodohkan juga dihitung otomatis.</p>
+        
+        <div class="score-grid">
+            <div class="score-item">
+                <label>Bagian A (PG HOTS)</label>
+                <span id="skorA">0</span>/100
+            </div>
+            <div class="score-item">
+                <label>Bagian B (PG Kompleks)</label>
+                <span id="skorB">0</span>/50
+            </div>
+            <div class="score-item">
+                <label>Bagian C (B/S)</label>
+                <span id="skorC">0</span>/20
+            </div>
+            <div class="score-item">
+                <label>Bagian D (Menjodohkan)</label>
+                <span id="skorD">0</span>/30
+            </div>
+            <div class="score-item">
+                <label>Skor Total</label>
+                <span id="skorTotal">0</span>/200
+            </div>
+            <div class="score-item">
+                <label>Nilai Akhir</label>
+                <span id="nilaiAkhir">0</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <button class="btn btn-info" onclick="unduhPDF()">📥 UNDUH PDF LENGKAP</button>
+            <button class="btn btn-warning" onclick="unduhSkor()">📊 UNDUH SKOR SAJA</button>
+            <button class="btn" onclick="kirimEmail()">✉️ Kirim Email Guru</button>
+            <button class="btn btn-danger" onclick="mulaiUlang()">🔄 MULAI ULANG</button>
+        </div>
+    </div>
+
+    <div class="chapter-nav">
+        <a href="index.html">🏠 Kembali ke Beranda</a>
+        <a href="20.html">📖 Materi Bab 20</a>
+        <a href="22.html">Lanjut ke Bab 22 →</a>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>IPA Kelas 7 Semester 1</h4>
+            <p>Buku ajar Ilmu Pengetahuan Alam untuk siswa MTs Kelas VII.</p>
+        </div>
+        <div>
+            <h4>Navigasi</h4>
+            <p><a href="index.html">Beranda</a></p>
+            <p><a href="index.html#tentang">Tentang Buku</a></p>
+            <p><a href="index.html#bab">Daftar Bab</a></p>
+            <p><a href="index.html#penulis">Penulis</a></p>
+        </div>
+        <div>
+            <h4>Kontak</h4>
+            <p>📧 <a href="mailto:nensirahayu0@gmail.com">nensirahayu0@gmail.com</a></p>
+            <p>🏫 MTsN 6 Agam</p>
+        </div>
+    </div>
+    <p style="margin-top: 30px; border-top: 1px solid #555; padding-top: 20px;">&copy; 2026 Nensi Rahayu, S.Si - MTsN 6 Agam. Hak cipta dilindungi.</p>
+</footer>
+
+<script>
+    // ===== KUNCI JAWABAN =====
+    
+    // Bagian A: PG HOTS (20 soal × 5 poin)
+    const jawabanPG = {
+        q1: 'b', q2: 'c', q3: 'c', q4: 'b', q5: 'b',
+        q6: 'c', q7: 'b', q8: 'b', q9: 'b', q10: 'b',
+        q11: 'c', q12: 'b', q13: 'b', q14: 'b', q15: 'c',
+        q16: 'a', q17: 'c', q18: 'b', q19: 'b', q20: 'b'
+    };
+
+    // Bagian B: PG Kompleks (10 soal × 5 poin) - array jawaban benar
+    const jawabanKompleks = {
+        k1: ['a', 'c', 'd', 'e'],
+        k2: ['a', 'b', 'c', 'd', 'e'],
+        k3: ['a', 'c', 'e'],
+        k4: ['a', 'b', 'd', 'e'],
+        k5: ['a', 'c', 'e'],
+        k6: ['a', 'c'],
+        k7: ['a', 'b', 'c', 'd', 'e'],
+        k8: ['a', 'b', 'c', 'd', 'e'],
+        k9: ['a', 'b', 'c'],
+        k10: ['a', 'b', 'c', 'e']
+    };
+
+    // Bagian C: Benar/Salah (5 soal × 4 poin)
+    const jawabanBS = {
+        bs1: 'benar',   // IPA punya 3 dimensi: produk, proses, sikap → BENAR
+        bs2: 'salah',   // Variabel kontrol = faktor yang dijaga tetap, BUKAN diubah-ubah → SALAH
+        bs3: 'salah',   // ☠️ = Toxic (beracun), BUKAN mudah terbakar → SALAH
+        bs4: 'benar',   // Besaran turunan diturunkan dari besaran pokok → BENAR
+        bs5: 'salah'    // Konveksi terjadi pada zat cair & gas, BUKAN padat → SALAH
+    };
+
+    // Bagian D: Menjodohkan (5 soal × 6 poin)
+    const jawabanJodoh = {
+        jodoh1: 'B',  // Alat ukur massa → Neraca Ohaus
+        jodoh2: 'E',  // Satuan SI waktu → Sekon
+        jodoh3: 'A',  // Gas → cair → Mengembun
+        jodoh4: 'C',  // Tanpa zat perantara → Radiasi
+        jodoh5: 'D'   // Berdasarkan titik didih → Destilasi
+    };
+
+    // ===== FUNGSI HITUNG SKOR =====
+    function hitungSkor() {
+        const nama = document.getElementById('nama').value.trim();
+        const nis = document.getElementById('nis').value.trim();
+        const kelas = document.getElementById('kelas').value;
+
+        if (!nama || !nis || !kelas) {
+            alert('⚠️ Harap lengkapi Nama Lengkap, NIS, dan Kelas terlebih dahulu!');
+            return;
+        }
+
+        // === Hitung Bagian A: PG HOTS ===
+        let skorA = 0;
+        let belumA = 0;
+        for (let i = 1; i <= 20; i++) {
+            const selected = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selected) {
+                if (selected.value === jawabanPG[`q${i}`]) skorA += 5;
+            } else {
+                belumA++;
+            }
+        }
+
+        // === Hitung Bagian B: PG Kompleks ===
+        let skorB = 0;
+        let belumB = 0;
+        for (let i = 1; i <= 10; i++) {
+            const checkboxes = document.querySelectorAll(`input[name="k${i}"]:checked`);
+            if (checkboxes.length === 0) {
+                belumB++;
+                continue;
+            }
+            const dipilih = Array.from(checkboxes).map(cb => cb.value).sort();
+            const benar = jawabanKompleks[`k${i}`].slice().sort();
+            
+            // Cek apakah ada jawaban salah
+            const adaSalah = dipilih.some(j => !benar.includes(j));
+            // Hitung jawaban benar yang dipilih
+            const benarDipilih = dipilih.filter(j => benar.includes(j)).length;
+            
+            if (adaSalah) {
+                // Ada jawaban salah → skor 0
+                skorB += 0;
+            } else if (benarDipilih === benar.length) {
+                // Semua benar dan lengkap → skor penuh 5
+                skorB += 5;
+            } else {
+                // Sebagian benar tanpa salah → skor 2
+                skorB += 2;
+            }
+        }
+
+        // === Hitung Bagian C: Benar/Salah ===
+        let skorC = 0;
+        let belumC = 0;
+        for (let i = 1; i <= 5; i++) {
+            const selected = document.querySelector(`input[name="bs${i}"]:checked`);
+            if (selected) {
+                if (selected.value === jawabanBS[`bs${i}`]) skorC += 4;
+            } else {
+                belumC++;
+            }
+        }
+
+        // === Hitung Bagian D: Menjodohkan ===
+        let skorD = 0;
+        let belumD = 0;
+        for (let i = 1; i <= 5; i++) {
+            const selected = document.getElementById(`jodoh${i}`).value;
+            if (selected === '') {
+                belumD++;
+            } else if (selected === jawabanJodoh[`jodoh${i}`]) {
+                skorD += 6;
+            }
+        }
+
+        // === Konfirmasi jika ada yang belum dijawab ===
+        const totalBelum = belumA + belumB + belumC + belumD;
+        if (totalBelum > 0) {
+            if (!confirm(`Masih ada ${totalBelum} soal yang belum dijawab:\n• Bagian A: ${belumA} soal\n• Bagian B: ${belumB} soal\n• Bagian C: ${belumC} soal\n• Bagian D: ${belumD} soal\n\nYakin ingin mengirim?`)) {
+                return;
+            }
+        }
+
+        // === Tampilkan Hasil ===
+        const skorTotal = skorA + skorB + skorC + skorD;
+        const nilaiAkhir = (skorTotal / 200) * 100;
+
+        document.getElementById('skorA').innerText = skorA;
+        document.getElementById('skorB').innerText = skorB;
+        document.getElementById('skorC').innerText = skorC;
+        document.getElementById('skorD').innerText = skorD;
+        document.getElementById('skorTotal').innerText = skorTotal;
+        document.getElementById('nilaiAkhir').innerText = nilaiAkhir.toFixed(1);
+
+        const hasilBox = document.getElementById('hasilUjian');
+        hasilBox.style.display = 'block';
+        hasilBox.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ===== FUNGSI UNDUH PDF =====
+    function unduhPDF() {
+        alert('💡 Tips: Tekan Ctrl+P (atau Cmd+P di Mac) pada browser Anda, lalu pilih "Save as PDF" untuk mengunduh halaman ini sebagai PDF.');
+        window.print();
+    }
+
+    // ===== FUNGSI UNDUH SKOR =====
+    function unduhSkor() {
+        const nama = document.getElementById('nama').value;
+        const nis = document.getElementById('nis').value;
+        const kelas = document.getElementById('kelas').value;
+        const tanggal = document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID');
+        const skorA = document.getElementById('skorA').innerText;
+        const skorB = document.getElementById('skorB').innerText;
+        const skorC = document.getElementById('skorC').innerText;
+        const skorD = document.getElementById('skorD').innerText;
+        const skorTotal = document.getElementById('skorTotal').innerText;
+        const nilai = document.getElementById('nilaiAkhir').innerText;
+
+        let text = `LAPORAN HASIL UJIAN TENGAH SEMESTER (UTS)\n`;
+        text += `================================================\n`;
+        text += `BUKU: IPA KELAS 7 SEMESTER 1\n`;
+        text += `MATERI: Bab 1 - Bab 20\n\n`;
+        text += `DATA SISWA\n`;
+        text += `Nama    : ${nama}\n`;
+        text += `NIS     : ${nis}\n`;
+        text += `Kelas   : ${kelas}\n`;
+        text += `Tanggal : ${tanggal}\n\n`;
+        text += `RINCIAN NILAI\n`;
+        text += `Bagian A (PG HOTS)       : ${skorA} / 100\n`;
+        text += `Bagian B (PG Kompleks)   : ${skorB} / 50\n`;
+        text += `Bagian C (Benar/Salah)   : ${skorC} / 20\n`;
+        text += `Bagian D (Menjodohkan)   : ${skorD} / 30\n`;
+        text += `--------------------------------------------\n`;
+        text += `Skor Total               : ${skorTotal} / 200\n`;
+        text += `Nilai Akhir              : ${nilai}\n\n`;
+        text += `Guru Mata Pelajaran,\n\n\n\n(Nensi Rahayu, S.Si)\n`;
+        
+        const blob = new Blob([text], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Skor_UTS_IPA_Bab1-20_${nama.replace(/\s+/g, '_')}.txt`;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    // ===== FUNGSI KIRIM EMAIL =====
+    function kirimEmail() {
+        const nama = document.getElementById('nama').value;
+        const nis = document.getElementById('nis').value;
+        const kelas = document.getElementById('kelas').value;
+        const skorA = document.getElementById('skorA').innerText;
+        const skorB = document.getElementById('skorB').innerText;
+        const skorC = document.getElementById('skorC').innerText;
+        const skorD = document.getElementById('skorD').innerText;
+        const skorTotal = document.getElementById('skorTotal').innerText;
+        const nilai = document.getElementById('nilaiAkhir').innerText;
+
+        const subject = encodeURIComponent(`Laporan UTS IPA - ${nama} (${kelas})`);
+        const body = encodeURIComponent(
+            `Yth. Ibu Nensi Rahayu, S.Si,\n\n` +
+            `Berikut adalah laporan hasil Ujian Tengah Semester (UTS) IPA Kelas 7 Semester 1 saya:\n\n` +
+            `Nama    : ${nama}\n` +
+            `NIS     : ${nis}\n` +
+            `Kelas   : ${kelas}\n\n` +
+            `RINCIAN NILAI:\n` +
+            `• Bagian A (PG HOTS)     : ${skorA}/100\n` +
+            `• Bagian B (PG Kompleks) : ${skorB}/50\n` +
+            `• Bagian C (Benar/Salah) : ${skorC}/20\n` +
+            `• Bagian D (Menjodohkan) : ${skorD}/30\n` +
+            `• Skor Total             : ${skorTotal}/200\n` +
+            `• Nilai Akhir            : ${nilai}\n\n` +
+            `Terima kasih.`
+        );
+
+        window.location.href = `mailto:nensirahayu0@gmail.com?subject=${subject}&body=${body}`;
+    }
+
+    // ===== FUNGSI MULAI ULANG =====
+    function mulaiUlang() {
+        if (confirm('⚠️ Yakin ingin mengulang ujian? Semua jawaban dan skor akan dihapus.')) {
+            location.reload();
+        }
+    }
+</script>
+
+</body>
+</html>
