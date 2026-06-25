@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPA Kelas 7 Semester 1 | Nensi Rahayu, S.Si</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background: linear-gradient(135deg, #0056b3, #003d82);
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        nav {
+            background: #003d82;
+            text-align: center;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffc107;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: #fff;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .hero h1 {
+            color: #0056b3;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .btn {
+            display: inline-block;
+            background: #28a745;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+        .section {
+            background: #fff;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .grid-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .grid-item h3 {
+            color: #28a745;
+            margin-top: 0;
+        }
+        .bab-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .bab-item {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .bab-item:hover {
+            background: #d4edda;
+        }
+        .bab-item a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+            display: block;
+        }
+        .bab-item span {
+            display: block;
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 5px;
+        }
+        .author-info {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .author-info h3 {
+            margin-bottom: 5px;
+            color: #0056b3;
+        }
+        blockquote {
+            font-style: italic;
+            color: #555;
+            border-left: 4px solid #28a745;
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+        footer {
+            background: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        /* ===== STYLE BARU: Cover Buku & Foto Penulis ===== */
+        .book-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #e7f3ff, #f8f9fa);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .book-cover-container {
+            text-align: center;
+        }
+        .book-cover-container h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .book-cover {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .book-cover:hover {
+            transform: scale(1.05);
+        }
+        .book-cover-placeholder {
+            width: 300px;
+            height: 400px;
+            background: #ddd;
+            border: 2px dashed #0056b3;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .author-photo-container {
+            text-align: center;
+        }
+        .author-photo-container h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .author-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #0056b3;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .author-photo:hover {
+            transform: scale(1.05);
+        }
+        .author-photo-placeholder {
+            width: 250px;
+            height: 250px;
+            background: #ddd;
+            border: 2px dashed #0056b3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .author-details {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .author-details p {
+            margin-bottom: 10px;
+        }
+        .author-details strong {
+            color: #0056b3;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .book-showcase {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>IPA Kelas 7 Semester 1</h1>
+    <p>Buku Ajar Ilmu Pengetahuan Alam untuk MTs Kelas VII</p>
+</header>
+
+<nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#tentang">Tentang Buku</a>
+    <a href="#bab">Daftar Bab</a>
+    <a href="#penulis">Penulis</a>
+    <a href="#kontak">Kontak</a>
+</nav>
+
+<div class="container">
+
+    <div id="beranda" class="hero">
+        <h1>IPA Kelas 7 Semester 1</h1>
+        <p>Buku panduan komprehensif untuk siswa MTs Kelas 7. Membahas konsep dasar Sains, Pengukuran, Zat dan Perubahannya, Suhu, Kalor, Gerak, Gaya, hingga Energi dan Tekanan dengan bahasa yang mudah dipahami.</p>
+        <p><strong>Edisi 2026</strong></p>
+        <p><strong>Nensi Rahayu, S.Si</strong><br>MTsN 6 Agam</p>
+        <p>Email: nensirahayu0@gmail.com</p>
+        <a href="#bab" class="btn">Lihat Daftar Bab</a>
+    </div>
+
+    <!-- ===== SECTION BARU: Cover Buku & Foto Penulis ===== -->
+    <div class="book-showcase">
+        <div class="book-cover-container">
+            <h3>📚 Cover Buku</h3>
+            <!-- GANTI FILE: cover-buku.jpg dengan file cover buku Anda -->
+            <img src="cover-buku.jpg" alt="Cover Buku IPA Kelas 7 Semester 1" class="book-cover" 
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="book-cover-placeholder" style="display:none;">
+                <span>📷<br>File: cover-buku.jpg<br>belum ditemukan</span>
+            </div>
+            <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">
+                <em>Untuk mengganti cover, simpan file dengan nama <strong>cover-buku.jpg</strong> di folder yang sama dengan index.html</em>
+            </p>
+        </div>
+
+        <div class="author-photo-container">
+            <h3> Foto Penulis</h3>
+            <!-- GANTI FILE: photo-penulis.jpg dengan file foto penulis Anda -->
+            <img src="photo-penulis.jpg" alt="Foto Nensi Rahayu, S.Si" class="author-photo"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="author-photo-placeholder" style="display:none;">
+                <span>📷<br>File: photo-penulis.jpg<br>belum ditemukan</span>
+            </div>
+            <div class="author-details">
+                <h3 style="text-align: center; margin-top: 20px;">Nensi Rahayu, S.Si</h3>
+                <p><strong>🏫 Institusi:</strong> MTsN 6 Agam</p>
+                <p><strong>📧 Email:</strong> nensirahayu0@gmail.com</p>
+                <p><strong>📚 Mata Pelajaran:</strong> Ilmu Pengetahuan Alam (IPA)</p>
+                <p><strong>🎓 Kualifikasi:</strong> Sarjana Sains (S.Si)</p>
+                <p><strong> Buku Ini:</strong> IPA Kelas 7 Semester 1 (40 Bab)</p>
+                <blockquote style="margin-top: 15px;">
+                    "Sains bukan sekadar hafalan, melainkan cara kita memahami keindahan dan keteraturan alam semesta ciptaan-Nya."
+                </blockquote>
+            </div>
+            <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">
+                <em>Untuk mengganti foto, simpan file dengan nama <strong>photo-penulis.jpg</strong> di folder yang sama dengan index.html</em>
+            </p>
+        </div>
+    </div>
+
+    <div id="tentang" class="section">
+        <h2>Tentang Buku</h2>
+        <p>Buku ini dirancang sebagai pegangan utama bagi siswa MTs kelas 7 dalam mempelajari Ilmu Pengetahuan Alam (IPA). Buku ini mengintegrasikan teori dasar sains dengan contoh-contoh praktik dan percobaan sederhana di sekitar kita.</p>
+        
+        <div class="grid">
+            <div class="grid-item">
+                <h3> 40 Bab Lengkap</h3>
+                <p>Dari konsep dasar sains hingga aplikasi fisika</p>
+            </div>
+            <div class="grid-item">
+                <h3>🔬 Berbasis Praktikum</h3>
+                <p>Dilengkapi langkah-langkah pengamatan IPA</p>
+            </div>
+            <div class="grid-item">
+                <h3>💡 Kontekstual</h3>
+                <p>Materi dikaitkan dengan kehidupan sehari-hari</p>
+            </div>
+            <div class="grid-item">
+                <h3>✅ UTS & UAS</h3>
+                <p>Evaluasi pembelajaran terstruktur</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 30px; color: #0056b3;">Struktur Pembahasan</h3>
+        <p>Buku ini disusun secara sistematis dengan pembagian:</p>
+        <ul>
+            <li><strong>Bab 1-20:</strong> Landasan Dasar IPA, Zat, Suhu, Kalor, dan Review Materi</li>
+            <li><strong>Bab 21:</strong> Ujian Tengah Semester (UTS)</li>
+            <li><strong>Bab 22-39:</strong> Konsep Gerak, Gaya, Hukum Newton, Energi, dan Tekanan</li>
+            <li><strong>Bab 40:</strong> Ujian Akhir Semester (UAS)</li>
+        </ul>
+    </div>
+
+    <div id="bab" class="section">
+        <h2>Daftar Bab</h2>
+        <p>Klik pada setiap bab untuk membuka materi lengkap (file .html terpisah). Semua bab akan terbuka di tab baru.</p>
+        <div class="bab-list">
+            <!-- Bab 1-20 -->
+            <div class="bab-item"><a href="1.html" target="_blank">1. Hakikat Sains dan Metode Ilmiah</a></div>
+            <div class="bab-item"><a href="2.html" target="_blank">2. Keselamatan Kerja dalam Laboratorium</a></div>
+            <div class="bab-item"><a href="3.html" target="_blank">3. Pengukuran dalam Kegiatan Pengamatan IPA</a></div>
+            <div class="bab-item"><a href="4.html" target="_blank">4. Besaran Pokok dan Besaran Turunan</a></div>
+            <div class="bab-item"><a href="5.html" target="_blank">5. Satuan Standar dan Konversi Satuan</a></div>
+            <div class="bab-item"><a href="6.html" target="_blank">6. Alat Ukur Panjang, Massa, dan Waktu</a></div>
+            <div class="bab-item"><a href="7.html" target="_blank">7. Zat dan Wujudnya</a></div>
+            <div class="bab-item"><a href="8.html" target="_blank">8. Partikel Penyusun Materi (Atom, Ion, Molekul)</a></div>
+            <div class="bab-item"><a href="9.html" target="_blank">9. Perubahan Wujud Zat</a></div>
+            <div class="bab-item"><a href="10.html" target="_blank">10. Sifat Fisika dan Sifat Kimia Materi</a></div>
+            <div class="bab-item"><a href="11.html" target="_blank">11. Campuran dan Metode Pemisahannya</a></div>
+            <div class="bab-item"><a href="12.html" target="_blank">12. Konsep Suhu dan Termometer</a></div>
+            <div class="bab-item"><a href="13.html" target="_blank">13. Pemuaian Zat Padat, Cair, dan Gas</a></div>
+            <div class="bab-item"><a href="14.html" target="_blank">14. Pengaruh Suhu terhadap Pemuaian</a></div>
+            <div class="bab-item"><a href="15.html" target="_blank">15. Konsep Kalor dan Kapasitas Kalor</a></div>
+            <div class="bab-item"><a href="16.html" target="_blank">16. Perpindahan Kalor secara Konduksi</a></div>
+            <div class="bab-item"><a href="17.html" target="_blank">17. Perpindahan Kalor secara Konveksi</a></div>
+            <div class="bab-item"><a href="18.html" target="_blank">18. Perpindahan Kalor secara Radiasi</a></div>
+            <div class="bab-item"><a href="19.html" target="_blank">19. Review Materi Bab 1-18</a></div>
+            <div class="bab-item"><a href="20.html" target="_blank">20. Latihan Soal Bab 1-18</a></div>
+            
+            <!-- Bab 21 -->
+            <div class="bab-item" style="background: #fff3cd; border: 1px solid #ffeeba;"><a href="21.html" target="_blank">21. Ujian Tengah Semester (UTS)</a></div>
+            
+            <!-- Bab 22-39 -->
+            <div class="bab-item"><a href="22.html" target="_blank">22. Konsep Dasar Gerak Lurus</a></div>
+            <div class="bab-item"><a href="23.html" target="_blank">23. Gerak Lurus Beraturan (GLB)</a></div>
+            <div class="bab-item"><a href="24.html" target="_blank">24. Gerak Lurus Berubah Beraturan (GLBB)</a></div>
+            <div class="bab-item"><a href="25.html" target="_blank">25. Konsep Dasar Gaya</a></div>
+            <div class="bab-item"><a href="26.html" target="_blank">26. Resultan Gaya dan Diagram Bebas Benda</a></div>
+            <div class="bab-item"><a href="27.html" target="_blank">27. Hukum I Newton tentang Gerak</a></div>
+            <div class="bab-item"><a href="28.html" target="_blank">28. Hukum II Newton tentang Gerak</a></div>
+            <div class="bab-item"><a href="29.html" target="_blank">29. Hukum III Newton tentang Gerak</a></div>
+            <div class="bab-item"><a href="30.html" target="_blank">30. Penerapan Hukum Newton dalam Kehidupan</a></div>
+            <div class="bab-item"><a href="31.html" target="_blank">31. Konsep Usaha dalam IPA</a></div>
+            <div class="bab-item"><a href="32.html" target="_blank">32. Energi dan Bentuk-bentuknya</a></div>
+            <div class="bab-item"><a href="33.html" target="_blank">33. Energi Kinetik dan Energi Potensial</a></div>
+            <div class="bab-item"><a href="34.html" target="_blank">34. Hukum Kekekalan Energi Mekanik</a></div>
+            <div class="bab-item"><a href="35.html" target="_blank">35. Konsep Daya dan Pesawat Sederhana</a></div>
+            <div class="bab-item"><a href="36.html" target="_blank">36. Tuas, Katrol, dan Bidang Miring</a></div>
+            <div class="bab-item"><a href="37.html" target="_blank">37. Tekanan Zat Padat</a></div>
+            <div class="bab-item"><a href="38.html" target="_blank">38. Tekanan Zat Cair (Hukum Pascal dan Archimedes)</a></div>
+            <div class="bab-item"><a href="39.html" target="_blank">39. Tekanan Gas dan Penerapannya</a></div>
+            
+            <!-- Bab 40 -->
+            <div class="bab-item" style="background: #f8d7da; border: 1px solid #f5c6cb;"><a href="40.html" target="_blank">40. Ujian Akhir Semester (UAS)</a></div>
+        </div>
+    </div>
+
+    <div id="penulis" class="section">
+        <h2>Tentang Penulis</h2>
+        <div class="author-info">
+            <h3>Nensi Rahayu, S.Si</h3>
+            <p>Guru IPA di MTsN 6 Agam</p>
+            <blockquote>
+                "Sains bukan sekadar hafalan, melainkan cara kita memahami keindahan dan keteraturan alam semesta ciptaan-Nya."
+            </blockquote>
+            <p>Beliau adalah seorang pendidik yang berdedikasi di bidang Ilmu Pengetahuan Alam. Buku ini disusun berdasarkan pengalaman mengajar di kelas serta keinginan untuk membuat konsep-konsep fisika dasar menjadi lebih mudah dipahami dan relevan bagi siswa MTs.</p>
+        </div>
+    </div>
+
+    <div id="kontak" class="section">
+        <h2>Informasi Kontak</h2>
+        <p>Untuk informasi lebih lanjut tentang buku ini, silakan hubungi:</p>
+        <ul>
+            <li><strong>Email:</strong> nensirahayu0@gmail.com</li>
+            <li><strong>Institusi:</strong> MTsN 6 Agam</li>
+            <li><strong>Tahun Terbit:</strong> 2026</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Nensi Rahayu, S.Si - MTsN 6 Agam</p>
+    <p>IPA Kelas 7 Semester 1: Konsep Dasar dan Aplikasinya</p>
+    <p>Hak Cipta Dilindungi</p>
+</footer>
+
+</body>
+</html>
